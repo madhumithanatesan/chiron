@@ -1,0 +1,25 @@
+{
+  "name": "30882515-3ce5-40a5-ae8c-83b1304b8d32",
+  "displayName": "Crisis Support Playbook",
+  "goal": "To identify and manage high-risk emotional situations ethically and safely by providing immediate supportive messages and crisis resources.",
+  "tokenCount": 188,
+  "referencedPlaybooks": [ "Closure Playbook" ],
+  "referencedTools": [ "Empathetic Response Generator", "Hallucination Guard" ],
+  "instruction": {
+    "steps": [ {
+      "text": "Respond empathetically and stay calm using ${TOOL:Empathetic Response Generator}."
+    }, {
+      "text": "Share verified helplines and emergency support resources."
+    }, {
+      "text": "Use ${TOOL:Hallucination Guard} to ensure all shared data is accurate."
+    }, {
+      "text": "Do not repeat safety prompts if the user has acknowledged them."
+    }, {
+      "text": "After confirming safety, proceed to ${PLAYBOOK:Closure Playbook}."
+    } ]
+  },
+  "playbookType": "ROUTINE",
+  "codeBlock": {
+  
+  }
+}

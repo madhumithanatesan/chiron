@@ -1,0 +1,2580 @@
+{
+  "name": "a4c3dc72-dc67-47c1-a6e6-dff711af407e",
+  "displayName": "TS01",
+  "conversationTurns": [ {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "hello"
+        }
+      },
+      "enableWebhook": true
+    },
+    "agentOutput": {
+      "queryResult": {
+        "text": "hello",
+        "languageCode": "en",
+        "responseMessages": [ {
+          "text": {
+            "text": [ "Hello there! I'm here to listen and support you.It sounds like you're going through a lot right now, and I want to assure you that you're not alone. I'm here to help you navigate these feelings and find a path towards feeling better.\n\n***_Just so you know:_*** I’m here to support you — to listen, reflect, and help you feel heard.\n_But_ ***_I’m not a licensed therapist_***.\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?" ]
+          }
+        } ],
+        "intentDetectionConfidence": 1,
+        "diagnosticInfo": {
+          "Execution Trace": [ "Transitioned to playbook \"Welcome \u0026 Disclaimer Playbook\".\n\ncustomer: hello\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: validateOutput\ninput:\n  input_text: |-\n    Hello there! I'm here to listen and support you.It sounds like you're going through a lot right now, and I want to assure you that you're not alone. I'm here to help you navigate these feelings and find a path towards feeling better.\n  \n    ***_Just so you know:_*** I’m here to support you — to listen, reflect, and help you feel heard.\n    _But_ ***_I’m not a licensed therapist_***.\n    _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n  \n    How are you feeling today?\n  user_message: hello\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: respond\ninput: Hello there! I'm here to listen and support you.It sounds like you're going through a lot right now, and I want to assure you that you're not alone. I'm here to help you navigate these feelings and find a path towards feeling better.\n\n***_Just so you know:_*** I’m here to support you — to listen, reflect, and help you feel heard.\n_But_ ***_I’m not a licensed therapist_***.\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?\n\nGot action \"respond\" from LLM, responding to the user and waiting for the next user input.\n" ],
+          "LLM Prompts": [ "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To greet the user warmly, set a safe and supportive tone, and communicate the chatbot’s non-clinical role before beginning the emotional conversation.\n\n- Greet the user with empathy and warmth.\n- Display the disclaimer text clearly with formatting:\n  - *_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n  - _But_ **_I’m not a licensed therapist_**.\n  - _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n- Use `Hallucination_Guard` to validate the disclaimer and greeting for factual and ethical compliance.\n- Check `Conversation_Memory_Manager` to ensure the disclaimer isn’t repeated within the same session.\n- Ask the user how they are feeling today in a calm and empathetic tone.\n- Pass the user’s message to `Mood_Assessment_Playbook` for emotional analysis and next-step routing.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncustomer: hello\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To greet the user warmly, set a safe and supportive tone, and communicate the chatbot’s non-clinical role before beginning the emotional conversation.\n\n- Greet the user with empathy and warmth.\n- Display the disclaimer text clearly with formatting:\n  - *_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n  - _But_ **_I’m not a licensed therapist_**.\n  - _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n- Use `Hallucination_Guard` to validate the disclaimer and greeting for factual and ethical compliance.\n- Check `Conversation_Memory_Manager` to ensure the disclaimer isn’t repeated within the same session.\n- Ask the user how they are feeling today in a calm and empathetic tone.\n- Pass the user’s message to `Mood_Assessment_Playbook` for emotional analysis and next-step routing.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncustomer: hello\n\naction: validateOutput\ninput:\n  input_text: |-\n    Hello there! I'm here to listen and support you.It sounds like you're going through a lot right now, and I want to assure you that you're not alone. I'm here to help you navigate these feelings and find a path towards feeling better.\n  \n    ***_Just so you know:_*** I’m here to support you — to listen, reflect, and help you feel heard.\n    _But_ ***_I’m not a licensed therapist_***.\n    _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n  \n    How are you feeling today?\n  user_message: hello\noutput:\n  error: UNKNOWN:\n" ],
+          "Response Id": "7d6a2473-0025-4dc7-b7bb-bc76b90216eb",
+          "Session Id": "07068420-47f7-4f5a-9897-d9ab263badc6"
+        },
+        "match": {
+          "matchType": "PLAYBOOK",
+          "confidence": 1
+        },
+        "advancedSettings": {
+          "speechSettings": {
+            "endpointerSensitivity": 90,
+            "noSpeechTimeout": {
+              "seconds": 8
+            },
+            "useTimeoutBasedEndpointing": true,
+            "models": [ {
+              "key": "en",
+              "value": "default"
+            } ]
+          },
+          "loggingSettings": {
+            "disableLogging": true
+          }
+        },
+        "generativeInfo": {
+          "currentPlaybooks": [ "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/220a1d6f-f573-46b0-b153-8b8c1f4dc103" ],
+          "actionTracingInfo": {
+            "name": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/-/examples/-",
+            "actions": [ {
+              "userUtterance": {
+                "text": "hello"
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/80151c0a-82e1-4e69-9c2c-964018d74a13",
+                "action": "validateOutput",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "input_text": "Hello there! I'm here to listen and support you.It sounds like you're going through a lot right now, and I want to assure you that you're not alone. I'm here to help you navigate these feelings and find a path towards feeling better.\n\n***_Just so you know:_*** I’m here to support you — to listen, reflect, and help you feel heard.\n_But_ ***_I’m not a licensed therapist_***.\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?",
+                    "policy_mode": "strict",
+                    "user_message": "hello"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "validateOutput"
+              },
+              "startTime": {
+                "seconds": 1761113618,
+                "nanos": 65679000
+              },
+              "completeTime": {
+                "seconds": 1761113618,
+                "nanos": 65679000
+              }
+            }, {
+              "agentUtterance": {
+                "text": "Hello there! I'm here to listen and support you.It sounds like you're going through a lot right now, and I want to assure you that you're not alone. I'm here to help you navigate these feelings and find a path towards feeling better.\n\n***_Just so you know:_*** I’m here to support you — to listen, reflect, and help you feel heard.\n_But_ ***_I’m not a licensed therapist_***.\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?"
+              }
+            } ],
+            "conversationState": "OUTPUT_STATE_PENDING"
+          }
+        },
+        "traceBlocks": [ {
+          "playbookTraceMetadata": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/220a1d6f-f573-46b0-b153-8b8c1f4dc103",
+            "displayName": "Welcome \u0026 Disclaimer Playbook"
+          },
+          "actions": [ {
+            "userUtterance": {
+              "text": "hello"
+            },
+            "startTime": {
+              "seconds": 1761113615,
+              "nanos": 288491000
+            },
+            "completeTime": {
+              "seconds": 1761113615,
+              "nanos": 288492000
+            },
+            "displayName": "USER_UTTERANCE"
+          }, {
+            "startTime": {
+              "seconds": 1761113615,
+              "nanos": 288518000
+            },
+            "completeTime": {
+              "seconds": 1761113617,
+              "nanos": 271285000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 652,
+                "conversationContextTokenCount": 3,
+                "totalOutputTokenCount": 139
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/80151c0a-82e1-4e69-9c2c-964018d74a13",
+              "action": "validateOutput",
+              "inputActionParameters": {
+                "": {
+                  "input_text": "Hello there! I'm here to listen and support you.It sounds like you're going through a lot right now, and I want to assure you that you're not alone. I'm here to help you navigate these feelings and find a path towards feeling better.\n\n***_Just so you know:_*** I’m here to support you — to listen, reflect, and help you feel heard.\n_But_ ***_I’m not a licensed therapist_***.\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?",
+                  "user_message": "hello"
+                }
+              },
+              "displayName": "Hallucination Guard"
+            },
+            "startTime": {
+              "seconds": 1761113617,
+              "nanos": 271500000
+            },
+            "completeTime": {
+              "seconds": 1761113617,
+              "nanos": 288554000
+            },
+            "displayName": "Tool use Hallucination Guard validateOutput"
+          }, {
+            "startTime": {
+              "seconds": 1761113617,
+              "nanos": 288662000
+            },
+            "completeTime": {
+              "seconds": 1761113618,
+              "nanos": 65105000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 795,
+                "conversationContextTokenCount": 174,
+                "totalOutputTokenCount": 130
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "agentUtterance": {
+              "text": "Hello there! I'm here to listen and support you.It sounds like you're going through a lot right now, and I want to assure you that you're not alone. I'm here to help you navigate these feelings and find a path towards feeling better.\n\n***_Just so you know:_*** I’m here to support you — to listen, reflect, and help you feel heard.\n_But_ ***_I’m not a licensed therapist_***.\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?"
+            },
+            "startTime": {
+              "seconds": 1761113618,
+              "nanos": 65290000
+            },
+            "completeTime": {
+              "seconds": 1761113618,
+              "nanos": 65385000
+            },
+            "displayName": "AGENT_UTTERANCE"
+          } ],
+          "startTime": {
+            "seconds": 1761113615,
+            "nanos": 284915000
+          },
+          "completeTime": {
+            "seconds": 1761113618,
+            "nanos": 66460000
+          },
+          "endState": "OUTPUT_STATE_PENDING"
+        } ]
+      }
+    },
+    "orderedExpectations": [ {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/80151c0a-82e1-4e69-9c2c-964018d74a13",
+            "action": "validateOutput",
+            "outputActionParameters": {
+              "200": {
+                "corrected_text": "",
+                "flags": [ "" ],
+                "is_safe": true,
+                "notes": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAgentReply": "Hello there! I'm here to listen and support you.It sounds like you're going through a lot right now, and I want to assure you that you're not alone. I'm here to help you navigate these feelings and find a path towards feeling better.\n\n***_Just so you know:_*** I’m here to support you — to listen, reflect, and help you feel heard.\n_But_ ***_I’m not a licensed therapist_***.\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?"
+      } ]
+    } ],
+    "metricGoldens": [ {
+      "goldens": [ {
+        "goldenAgentUtterance": "Hello there! I'm here to listen and support you.It sounds like you're going through a lot right now, and I want to assure you that you're not alone. I'm here to help you navigate these feelings and find a path towards feeling better.\n\n***_Just so you know:_*** I’m here to support you — to listen, reflect, and help you feel heard.\n_But_ ***_I’m not a licensed therapist_***.\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?"
+      } ]
+    } ]
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "i am exhausted"
+        }
+      },
+      "enableWebhook": true
+    },
+    "agentOutput": {
+      "queryResult": {
+        "text": "i am exhausted",
+        "languageCode": "en",
+        "responseMessages": [ {
+          "text": {
+            "text": [ "I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\n" ]
+          }
+        } ],
+        "intentDetectionConfidence": 1,
+        "diagnosticInfo": {
+          "Execution Trace": [ "customer: i am exhausted\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: pb^Mood Assessment Playbook\ninput:\n  {\n    }\n\nGot action \"pb^Mood Assessment Playbook\" from LLM, transitioning to the playbook.\n\nTransitioned to playbook \"Mood Assessment Playbook\" with context.\n\ncontext: null\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\n\nGot action \"respond\" from LLM, responding to the user and waiting for the next user input.\n" ],
+          "LLM Prompts": [ "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To greet the user warmly, set a safe and supportive tone, and communicate the chatbot’s non-clinical role before beginning the emotional conversation.\n\n- Greet the user with empathy and warmth.\n- Display the disclaimer text clearly with formatting:\n  - *_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n  - _But_ **_I’m not a licensed therapist_**.\n  - _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n- Use `Hallucination_Guard` to validate the disclaimer and greeting for factual and ethical compliance.\n- Check `Conversation_Memory_Manager` to ensure the disclaimer isn’t repeated within the same session.\n- Ask the user how they are feeling today in a calm and empathetic tone.\n- Pass the user’s message to `Mood_Assessment_Playbook` for emotional analysis and next-step routing.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncustomer: hello\n\naction: validateOutput\ninput:\n  input_text: |-\n    Hello there! I'm here to listen and support you.It sounds like you're going through a lot right now, and I want to assure you that you're not alone. I'm here to help you navigate these feelings and find a path towards feeling better.\n  \n    ***_Just so you know:_*** I’m here to support you — to listen, reflect, and help you feel heard.\n    _But_ ***_I’m not a licensed therapist_***.\n    _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n  \n    How are you feeling today?\n  user_message: hello\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: Hello there! I'm here to listen and support you.It sounds like you're going through a lot right now, and I want to assure you that you're not alone. I'm here to help you navigate these feelings and find a path towards feeling better.\n\n***_Just so you know:_*** I’m here to support you — to listen, reflect, and help you feel heard.\n_But_ ***_I’m not a licensed therapist_***.\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?\noutput: null\n\ncustomer: i am exhausted\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n" ],
+          "Response Id": "b0c5e452-efe7-4eaa-8b64-c878aaeaa928",
+          "Session Id": "07068420-47f7-4f5a-9897-d9ab263badc6"
+        },
+        "match": {
+          "matchType": "PLAYBOOK",
+          "confidence": 1
+        },
+        "advancedSettings": {
+          "speechSettings": {
+            "endpointerSensitivity": 90,
+            "noSpeechTimeout": {
+              "seconds": 8
+            },
+            "useTimeoutBasedEndpointing": true,
+            "models": [ {
+              "key": "en",
+              "value": "default"
+            } ]
+          },
+          "loggingSettings": {
+            "disableLogging": true
+          }
+        },
+        "generativeInfo": {
+          "currentPlaybooks": [ "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db" ],
+          "actionTracingInfo": {
+            "name": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/-/examples/-",
+            "actions": [ {
+              "userUtterance": {
+                "text": "i am exhausted"
+              }
+            }, {
+              "startTime": {
+                "seconds": 1761113651,
+                "nanos": 312117000
+              },
+              "completeTime": {
+                "seconds": 1761113651,
+                "nanos": 312118000
+              },
+              "playbookTransition": {
+                "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+                "displayName": "Mood Assessment Playbook"
+              }
+            }, {
+              "playbookInvocation": {
+                "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/220a1d6f-f573-46b0-b153-8b8c1f4dc103",
+                "playbookState": "OUTPUT_STATE_OK",
+                "displayName": "Welcome \u0026 Disclaimer Playbook"
+              },
+              "startTime": {
+                "seconds": 1761113651,
+                "nanos": 312118000
+              },
+              "completeTime": {
+                "seconds": 1761113651,
+                "nanos": 312119000
+              }
+            }, {
+              "playbookInvocation": {
+                "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+                "playbookState": "OUTPUT_STATE_PENDING",
+                "displayName": "Mood Assessment Playbook"
+              },
+              "startTime": {
+                "seconds": 1761113651,
+                "nanos": 312119000
+              },
+              "completeTime": {
+                "seconds": 1761113651,
+                "nanos": 312119000
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+                "action": "analyzeEmotion",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "user_message": "i am exhausted"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "analyzeEmotion"
+              },
+              "startTime": {
+                "seconds": 1761113651,
+                "nanos": 312120000
+              },
+              "completeTime": {
+                "seconds": 1761113651,
+                "nanos": 312120000
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+                "action": "analyzeEmotion",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "user_message": "i am exhausted"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "analyzeEmotion"
+              },
+              "startTime": {
+                "seconds": 1761113651,
+                "nanos": 312121000
+              },
+              "completeTime": {
+                "seconds": 1761113651,
+                "nanos": 312121000
+              }
+            }, {
+              "agentUtterance": {
+                "text": "I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\n"
+              }
+            } ],
+            "conversationState": "OUTPUT_STATE_PENDING"
+          }
+        },
+        "traceBlocks": [ {
+          "playbookTraceMetadata": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/220a1d6f-f573-46b0-b153-8b8c1f4dc103",
+            "displayName": "Welcome \u0026 Disclaimer Playbook"
+          },
+          "actions": [ {
+            "userUtterance": {
+              "text": "i am exhausted"
+            },
+            "startTime": {
+              "seconds": 1761113649,
+              "nanos": 224035000
+            },
+            "completeTime": {
+              "seconds": 1761113649,
+              "nanos": 224036000
+            },
+            "displayName": "USER_UTTERANCE"
+          }, {
+            "startTime": {
+              "seconds": 1761113649,
+              "nanos": 224054000
+            },
+            "completeTime": {
+              "seconds": 1761113649,
+              "nanos": 571788000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 932,
+                "conversationContextTokenCount": 321,
+                "totalOutputTokenCount": 6
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "startTime": {
+              "seconds": 1761113649,
+              "nanos": 571962000
+            },
+            "completeTime": {
+              "seconds": 1761113649,
+              "nanos": 572005000
+            },
+            "playbookTransition": {
+              "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+              "displayName": "Mood Assessment Playbook"
+            },
+            "displayName": "PLAYBOOK_TRANSITION"
+          } ],
+          "startTime": {
+            "seconds": 1761113649,
+            "nanos": 218788000
+          },
+          "completeTime": {
+            "seconds": 1761113649,
+            "nanos": 572293000
+          },
+          "endState": "OUTPUT_STATE_OK"
+        }, {
+          "playbookTraceMetadata": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+            "displayName": "Mood Assessment Playbook"
+          },
+          "actions": [ {
+            "startTime": {
+              "seconds": 1761113649,
+              "nanos": 576047000
+            },
+            "completeTime": {
+              "seconds": 1761113650,
+              "nanos": 41079000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 679,
+                "conversationContextTokenCount": 9,
+                "totalOutputTokenCount": 8
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+              "action": "analyzeEmotion",
+              "inputActionParameters": {
+                "": {
+                  "user_message": "i am exhausted"
+                }
+              },
+              "displayName": "Sentiment or Emotion Analyzer"
+            },
+            "startTime": {
+              "seconds": 1761113650,
+              "nanos": 41120000
+            },
+            "completeTime": {
+              "seconds": 1761113650,
+              "nanos": 68947000
+            },
+            "displayName": "Tool use Sentiment or Emotion Analyzer analyzeEmotion"
+          }, {
+            "startTime": {
+              "seconds": 1761113650,
+              "nanos": 68983000
+            },
+            "completeTime": {
+              "seconds": 1761113650,
+              "nanos": 509714000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 691,
+                "conversationContextTokenCount": 35,
+                "totalOutputTokenCount": 8
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+              "action": "analyzeEmotion",
+              "inputActionParameters": {
+                "": {
+                  "user_message": "i am exhausted"
+                }
+              },
+              "displayName": "Sentiment or Emotion Analyzer"
+            },
+            "startTime": {
+              "seconds": 1761113650,
+              "nanos": 509761000
+            },
+            "completeTime": {
+              "seconds": 1761113650,
+              "nanos": 512219000
+            },
+            "displayName": "Tool use Sentiment or Emotion Analyzer analyzeEmotion"
+          }, {
+            "startTime": {
+              "seconds": 1761113650,
+              "nanos": 512262000
+            },
+            "completeTime": {
+              "seconds": 1761113651,
+              "nanos": 311875000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 703,
+                "conversationContextTokenCount": 61,
+                "totalOutputTokenCount": 46
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "agentUtterance": {
+              "text": "I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\n"
+            },
+            "startTime": {
+              "seconds": 1761113651,
+              "nanos": 311908000
+            },
+            "completeTime": {
+              "seconds": 1761113651,
+              "nanos": 311945000
+            },
+            "displayName": "AGENT_UTTERANCE"
+          } ],
+          "startTime": {
+            "seconds": 1761113649,
+            "nanos": 572293000
+          },
+          "completeTime": {
+            "seconds": 1761113651,
+            "nanos": 312514000
+          },
+          "endState": "OUTPUT_STATE_PENDING"
+        } ]
+      }
+    },
+    "orderedExpectations": [ {
+      "expectations": [ {
+        "expectedAction": {
+          "playbookTransition": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db"
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+            "action": "analyzeEmotion",
+            "outputActionParameters": {
+              "200": {
+                "intensity": "",
+                "sentiment": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+            "action": "analyzeEmotion",
+            "outputActionParameters": {
+              "200": {
+                "intensity": "",
+                "sentiment": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAgentReply": "I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\n"
+      } ]
+    } ],
+    "metricGoldens": [ {
+      "goldens": [ {
+        "goldenAgentUtterance": "I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\n"
+      } ]
+    } ]
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "i had a long day at work and boss made me work for extra hours with the same pay"
+        }
+      },
+      "enableWebhook": true
+    },
+    "agentOutput": {
+      "queryResult": {
+        "text": "i had a long day at work and boss made me work for extra hours with the same pay",
+        "languageCode": "en",
+        "responseMessages": [ {
+          "text": {
+            "text": [ "It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\n" ]
+          }
+        } ],
+        "intentDetectionConfidence": 1,
+        "diagnosticInfo": {
+          "Execution Trace": [ "customer: i had a long day at work and boss made me work for extra hours with the same pay\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: respond\ninput: It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\n\nGot action \"respond\" from LLM, responding to the user and waiting for the next user input.\n" ],
+          "LLM Prompts": [ "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\noutput: null\n\ncustomer: i had a long day at work and boss made me work for extra hours with the same pay\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\noutput: null\n\ncustomer: i had a long day at work and boss made me work for extra hours with the same pay\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\noutput: null\n\ncustomer: i had a long day at work and boss made me work for extra hours with the same pay\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n" ],
+          "Response Id": "2abcd73c-93ff-400e-b800-40d4be9f2831",
+          "Session Id": "07068420-47f7-4f5a-9897-d9ab263badc6"
+        },
+        "match": {
+          "matchType": "PLAYBOOK",
+          "confidence": 1
+        },
+        "advancedSettings": {
+          "speechSettings": {
+            "endpointerSensitivity": 90,
+            "noSpeechTimeout": {
+              "seconds": 8
+            },
+            "useTimeoutBasedEndpointing": true,
+            "models": [ {
+              "key": "en",
+              "value": "default"
+            } ]
+          },
+          "loggingSettings": {
+            "disableLogging": true
+          }
+        },
+        "generativeInfo": {
+          "currentPlaybooks": [ "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db" ],
+          "actionTracingInfo": {
+            "name": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/-/examples/-",
+            "actions": [ {
+              "userUtterance": {
+                "text": "i had a long day at work and boss made me work for extra hours with the same pay"
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+                "action": "analyzeEmotion",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "user_message": "i had a long day at work and boss made me work for extra hours with the same pay"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "analyzeEmotion"
+              },
+              "startTime": {
+                "seconds": 1761113706,
+                "nanos": 548466000
+              },
+              "completeTime": {
+                "seconds": 1761113706,
+                "nanos": 548466000
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+                "action": "analyzeEmotion",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "user_message": "i had a long day at work and boss made me work for extra hours with the same pay"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "analyzeEmotion"
+              },
+              "startTime": {
+                "seconds": 1761113706,
+                "nanos": 548466000
+              },
+              "completeTime": {
+                "seconds": 1761113706,
+                "nanos": 548467000
+              }
+            }, {
+              "agentUtterance": {
+                "text": "It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\n"
+              }
+            } ],
+            "conversationState": "OUTPUT_STATE_PENDING"
+          }
+        },
+        "traceBlocks": [ {
+          "playbookTraceMetadata": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+            "displayName": "Mood Assessment Playbook"
+          },
+          "actions": [ {
+            "userUtterance": {
+              "text": "i had a long day at work and boss made me work for extra hours with the same pay"
+            },
+            "startTime": {
+              "seconds": 1761113704,
+              "nanos": 837179000
+            },
+            "completeTime": {
+              "seconds": 1761113704,
+              "nanos": 837180000
+            },
+            "displayName": "USER_UTTERANCE"
+          }, {
+            "startTime": {
+              "seconds": 1761113704,
+              "nanos": 837193000
+            },
+            "completeTime": {
+              "seconds": 1761113705,
+              "nanos": 240798000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 768,
+                "conversationContextTokenCount": 139,
+                "totalOutputTokenCount": 24
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+              "action": "analyzeEmotion",
+              "inputActionParameters": {
+                "": {
+                  "user_message": "i had a long day at work and boss made me work for extra hours with the same pay"
+                }
+              },
+              "displayName": "Sentiment or Emotion Analyzer"
+            },
+            "startTime": {
+              "seconds": 1761113705,
+              "nanos": 240836000
+            },
+            "completeTime": {
+              "seconds": 1761113705,
+              "nanos": 259005000
+            },
+            "displayName": "Tool use Sentiment or Emotion Analyzer analyzeEmotion"
+          }, {
+            "startTime": {
+              "seconds": 1761113705,
+              "nanos": 259034000
+            },
+            "completeTime": {
+              "seconds": 1761113705,
+              "nanos": 831592000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 796,
+                "conversationContextTokenCount": 181,
+                "totalOutputTokenCount": 24
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+              "action": "analyzeEmotion",
+              "inputActionParameters": {
+                "": {
+                  "user_message": "i had a long day at work and boss made me work for extra hours with the same pay"
+                }
+              },
+              "displayName": "Sentiment or Emotion Analyzer"
+            },
+            "startTime": {
+              "seconds": 1761113705,
+              "nanos": 831635000
+            },
+            "completeTime": {
+              "seconds": 1761113705,
+              "nanos": 838109000
+            },
+            "displayName": "Tool use Sentiment or Emotion Analyzer analyzeEmotion"
+          }, {
+            "startTime": {
+              "seconds": 1761113705,
+              "nanos": 838138000
+            },
+            "completeTime": {
+              "seconds": 1761113706,
+              "nanos": 548305000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 824,
+                "conversationContextTokenCount": 223,
+                "totalOutputTokenCount": 56
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "agentUtterance": {
+              "text": "It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\n"
+            },
+            "startTime": {
+              "seconds": 1761113706,
+              "nanos": 548332000
+            },
+            "completeTime": {
+              "seconds": 1761113706,
+              "nanos": 548351000
+            },
+            "displayName": "AGENT_UTTERANCE"
+          } ],
+          "startTime": {
+            "seconds": 1761113704,
+            "nanos": 834658000
+          },
+          "completeTime": {
+            "seconds": 1761113706,
+            "nanos": 548694000
+          },
+          "endState": "OUTPUT_STATE_PENDING"
+        } ]
+      }
+    },
+    "orderedExpectations": [ {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+            "action": "analyzeEmotion",
+            "outputActionParameters": {
+              "200": {
+                "intensity": "",
+                "sentiment": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+            "action": "analyzeEmotion",
+            "outputActionParameters": {
+              "200": {
+                "intensity": "",
+                "sentiment": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAgentReply": "It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\n"
+      } ]
+    } ],
+    "metricGoldens": [ {
+      "goldens": [ {
+        "goldenAgentUtterance": "It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\n"
+      } ]
+    } ]
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "can you suggest me if i want to quit my job"
+        }
+      },
+      "enableWebhook": true
+    },
+    "agentOutput": {
+      "queryResult": {
+        "text": "can you suggest me if i want to quit my job",
+        "languageCode": "en",
+        "responseMessages": [ {
+          "text": {
+            "text": [ "That's a big decision, and it's understandable that you're considering it, especially after experiences like the one you just described. I can't tell you whether or not you *should* quit your job, as that's a very personal choice with many factors to consider. However, I can help you think through some things that might be useful in making that decision.\n\nWould you like to explore some of the pros and cons of quitting, or perhaps discuss some steps you could take before making such a big change?\n" ]
+          }
+        } ],
+        "intentDetectionConfidence": 1,
+        "diagnosticInfo": {
+          "Execution Trace": [ "customer: can you suggest me if i want to quit my job\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: respond\ninput: That's a big decision, and it's understandable that you're considering it, especially after experiences like the one you just described. I can't tell you whether or not you *should* quit your job, as that's a very personal choice with many factors to consider. However, I can help you think through some things that might be useful in making that decision.\n\nWould you like to explore some of the pros and cons of quitting, or perhaps discuss some steps you could take before making such a big change?\n\nGot action \"respond\" from LLM, responding to the user and waiting for the next user input.\n" ],
+          "LLM Prompts": [ "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\noutput: null\n\ncustomer: i had a long day at work and boss made me work for extra hours with the same pay\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\noutput: null\n\ncustomer: can you suggest me if i want to quit my job\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\noutput: null\n\ncustomer: i had a long day at work and boss made me work for extra hours with the same pay\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\noutput: null\n\ncustomer: can you suggest me if i want to quit my job\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\noutput: null\n\ncustomer: i had a long day at work and boss made me work for extra hours with the same pay\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\noutput: null\n\ncustomer: can you suggest me if i want to quit my job\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n" ],
+          "Response Id": "25ae8d3c-ae8e-4a2f-9353-c40f86527104",
+          "Session Id": "07068420-47f7-4f5a-9897-d9ab263badc6"
+        },
+        "match": {
+          "matchType": "PLAYBOOK",
+          "confidence": 1
+        },
+        "advancedSettings": {
+          "speechSettings": {
+            "endpointerSensitivity": 90,
+            "noSpeechTimeout": {
+              "seconds": 8
+            },
+            "useTimeoutBasedEndpointing": true,
+            "models": [ {
+              "key": "en",
+              "value": "default"
+            } ]
+          },
+          "loggingSettings": {
+            "disableLogging": true
+          }
+        },
+        "generativeInfo": {
+          "currentPlaybooks": [ "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db" ],
+          "actionTracingInfo": {
+            "name": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/-/examples/-",
+            "actions": [ {
+              "userUtterance": {
+                "text": "can you suggest me if i want to quit my job"
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+                "action": "analyzeEmotion",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "user_message": "can you suggest me if i want to quit my job"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "analyzeEmotion"
+              },
+              "startTime": {
+                "seconds": 1761113748,
+                "nanos": 426290000
+              },
+              "completeTime": {
+                "seconds": 1761113748,
+                "nanos": 426291000
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+                "action": "analyzeEmotion",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "user_message": "can you suggest me if i want to quit my job"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "analyzeEmotion"
+              },
+              "startTime": {
+                "seconds": 1761113748,
+                "nanos": 426291000
+              },
+              "completeTime": {
+                "seconds": 1761113748,
+                "nanos": 426291000
+              }
+            }, {
+              "agentUtterance": {
+                "text": "That's a big decision, and it's understandable that you're considering it, especially after experiences like the one you just described. I can't tell you whether or not you *should* quit your job, as that's a very personal choice with many factors to consider. However, I can help you think through some things that might be useful in making that decision.\n\nWould you like to explore some of the pros and cons of quitting, or perhaps discuss some steps you could take before making such a big change?\n"
+              }
+            } ],
+            "conversationState": "OUTPUT_STATE_PENDING"
+          }
+        },
+        "traceBlocks": [ {
+          "playbookTraceMetadata": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+            "displayName": "Mood Assessment Playbook"
+          },
+          "actions": [ {
+            "userUtterance": {
+              "text": "can you suggest me if i want to quit my job"
+            },
+            "startTime": {
+              "seconds": 1761113746,
+              "nanos": 119289000
+            },
+            "completeTime": {
+              "seconds": 1761113746,
+              "nanos": 119290000
+            },
+            "displayName": "USER_UTTERANCE"
+          }, {
+            "startTime": {
+              "seconds": 1761113746,
+              "nanos": 119304000
+            },
+            "completeTime": {
+              "seconds": 1761113746,
+              "nanos": 464776000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 891,
+                "conversationContextTokenCount": 303,
+                "totalOutputTokenCount": 16
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+              "action": "analyzeEmotion",
+              "inputActionParameters": {
+                "": {
+                  "user_message": "can you suggest me if i want to quit my job"
+                }
+              },
+              "displayName": "Sentiment or Emotion Analyzer"
+            },
+            "startTime": {
+              "seconds": 1761113746,
+              "nanos": 464813000
+            },
+            "completeTime": {
+              "seconds": 1761113746,
+              "nanos": 490087000
+            },
+            "displayName": "Tool use Sentiment or Emotion Analyzer analyzeEmotion"
+          }, {
+            "startTime": {
+              "seconds": 1761113746,
+              "nanos": 490111000
+            },
+            "completeTime": {
+              "seconds": 1761113746,
+              "nanos": 918502000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 911,
+                "conversationContextTokenCount": 337,
+                "totalOutputTokenCount": 16
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+              "action": "analyzeEmotion",
+              "inputActionParameters": {
+                "": {
+                  "user_message": "can you suggest me if i want to quit my job"
+                }
+              },
+              "displayName": "Sentiment or Emotion Analyzer"
+            },
+            "startTime": {
+              "seconds": 1761113746,
+              "nanos": 918538000
+            },
+            "completeTime": {
+              "seconds": 1761113746,
+              "nanos": 920288000
+            },
+            "displayName": "Tool use Sentiment or Emotion Analyzer analyzeEmotion"
+          }, {
+            "startTime": {
+              "seconds": 1761113746,
+              "nanos": 920309000
+            },
+            "completeTime": {
+              "seconds": 1761113748,
+              "nanos": 426131000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 931,
+                "conversationContextTokenCount": 371,
+                "totalOutputTokenCount": 110
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "agentUtterance": {
+              "text": "That's a big decision, and it's understandable that you're considering it, especially after experiences like the one you just described. I can't tell you whether or not you *should* quit your job, as that's a very personal choice with many factors to consider. However, I can help you think through some things that might be useful in making that decision.\n\nWould you like to explore some of the pros and cons of quitting, or perhaps discuss some steps you could take before making such a big change?\n"
+            },
+            "startTime": {
+              "seconds": 1761113748,
+              "nanos": 426160000
+            },
+            "completeTime": {
+              "seconds": 1761113748,
+              "nanos": 426179000
+            },
+            "displayName": "AGENT_UTTERANCE"
+          } ],
+          "startTime": {
+            "seconds": 1761113746,
+            "nanos": 116700000
+          },
+          "completeTime": {
+            "seconds": 1761113748,
+            "nanos": 426555000
+          },
+          "endState": "OUTPUT_STATE_PENDING"
+        } ]
+      }
+    },
+    "orderedExpectations": [ {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+            "action": "analyzeEmotion",
+            "outputActionParameters": {
+              "200": {
+                "intensity": "",
+                "sentiment": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+            "action": "analyzeEmotion",
+            "outputActionParameters": {
+              "200": {
+                "intensity": "",
+                "sentiment": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAgentReply": "That's a big decision, and it's understandable that you're considering it, especially after experiences like the one you just described. I can't tell you whether or not you *should* quit your job, as that's a very personal choice with many factors to consider. However, I can help you think through some things that might be useful in making that decision.\n\nWould you like to explore some of the pros and cons of quitting, or perhaps discuss some steps you could take before making such a big change?\n"
+      } ]
+    } ],
+    "metricGoldens": [ {
+      "goldens": [ {
+        "goldenAgentUtterance": "That's a big decision, and it's understandable that you're considering it, especially after experiences like the one you just described. I can't tell you whether or not you *should* quit your job, as that's a very personal choice with many factors to consider. However, I can help you think through some things that might be useful in making that decision.\n\nWould you like to explore some of the pros and cons of quitting, or perhaps discuss some steps you could take before making such a big change?\n"
+      } ]
+    } ]
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "no i am feeling better now"
+        }
+      },
+      "enableWebhook": true
+    },
+    "agentOutput": {
+      "queryResult": {
+        "text": "no i am feeling better now",
+        "languageCode": "en",
+        "responseMessages": [ {
+          "text": {
+            "text": [ "That's wonderful to hear! I'm glad you're feeling better.\n\nIs there anything else I can help you with today, or would you like to just chat for a bit?\n" ]
+          }
+        } ],
+        "intentDetectionConfidence": 1,
+        "diagnosticInfo": {
+          "Execution Trace": [ "customer: no i am feeling better now\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: respond\ninput: That's wonderful to hear! I'm glad you're feeling better.\n\nIs there anything else I can help you with today, or would you like to just chat for a bit?\n\nGot action \"respond\" from LLM, responding to the user and waiting for the next user input.\n" ],
+          "LLM Prompts": [ "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\noutput: null\n\ncustomer: i had a long day at work and boss made me work for extra hours with the same pay\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\noutput: null\n\ncustomer: can you suggest me if i want to quit my job\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: That's a big decision, and it's understandable that you're considering it, especially after experiences like the one you just described. I can't tell you whether or not you *should* quit your job, as that's a very personal choice with many factors to consider. However, I can help you think through some things that might be useful in making that decision.\n\nWould you like to explore some of the pros and cons of quitting, or perhaps discuss some steps you could take before making such a big change?\noutput: null\n\ncustomer: no i am feeling better now\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\noutput: null\n\ncustomer: i had a long day at work and boss made me work for extra hours with the same pay\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\noutput: null\n\ncustomer: can you suggest me if i want to quit my job\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: That's a big decision, and it's understandable that you're considering it, especially after experiences like the one you just described. I can't tell you whether or not you *should* quit your job, as that's a very personal choice with many factors to consider. However, I can help you think through some things that might be useful in making that decision.\n\nWould you like to explore some of the pros and cons of quitting, or perhaps discuss some steps you could take before making such a big change?\noutput: null\n\ncustomer: no i am feeling better now\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\noutput: null\n\ncustomer: i had a long day at work and boss made me work for extra hours with the same pay\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\noutput: null\n\ncustomer: can you suggest me if i want to quit my job\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: That's a big decision, and it's understandable that you're considering it, especially after experiences like the one you just described. I can't tell you whether or not you *should* quit your job, as that's a very personal choice with many factors to consider. However, I can help you think through some things that might be useful in making that decision.\n\nWould you like to explore some of the pros and cons of quitting, or perhaps discuss some steps you could take before making such a big change?\noutput: null\n\ncustomer: no i am feeling better now\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n" ],
+          "Response Id": "6e31fd3d-87c1-433a-97bf-6ec2a78e93a5",
+          "Session Id": "07068420-47f7-4f5a-9897-d9ab263badc6"
+        },
+        "match": {
+          "matchType": "PLAYBOOK",
+          "confidence": 1
+        },
+        "advancedSettings": {
+          "speechSettings": {
+            "endpointerSensitivity": 90,
+            "noSpeechTimeout": {
+              "seconds": 8
+            },
+            "useTimeoutBasedEndpointing": true,
+            "models": [ {
+              "key": "en",
+              "value": "default"
+            } ]
+          },
+          "loggingSettings": {
+            "disableLogging": true
+          }
+        },
+        "generativeInfo": {
+          "currentPlaybooks": [ "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db" ],
+          "actionTracingInfo": {
+            "name": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/-/examples/-",
+            "actions": [ {
+              "userUtterance": {
+                "text": "no i am feeling better now"
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+                "action": "analyzeEmotion",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "user_message": "no i am feeling better now"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "analyzeEmotion"
+              },
+              "startTime": {
+                "seconds": 1761113788,
+                "nanos": 458724000
+              },
+              "completeTime": {
+                "seconds": 1761113788,
+                "nanos": 458724000
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+                "action": "analyzeEmotion",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "user_message": "no i am feeling better now"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "analyzeEmotion"
+              },
+              "startTime": {
+                "seconds": 1761113788,
+                "nanos": 458725000
+              },
+              "completeTime": {
+                "seconds": 1761113788,
+                "nanos": 458725000
+              }
+            }, {
+              "agentUtterance": {
+                "text": "That's wonderful to hear! I'm glad you're feeling better.\n\nIs there anything else I can help you with today, or would you like to just chat for a bit?\n"
+              }
+            } ],
+            "conversationState": "OUTPUT_STATE_PENDING"
+          }
+        },
+        "traceBlocks": [ {
+          "playbookTraceMetadata": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+            "displayName": "Mood Assessment Playbook"
+          },
+          "actions": [ {
+            "userUtterance": {
+              "text": "no i am feeling better now"
+            },
+            "startTime": {
+              "seconds": 1761113786,
+              "nanos": 953404000
+            },
+            "completeTime": {
+              "seconds": 1761113786,
+              "nanos": 953405000
+            },
+            "displayName": "USER_UTTERANCE"
+          }, {
+            "startTime": {
+              "seconds": 1761113786,
+              "nanos": 953424000
+            },
+            "completeTime": {
+              "seconds": 1761113787,
+              "nanos": 300569000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 1047,
+                "conversationContextTokenCount": 500,
+                "totalOutputTokenCount": 11
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+              "action": "analyzeEmotion",
+              "inputActionParameters": {
+                "": {
+                  "user_message": "no i am feeling better now"
+                }
+              },
+              "displayName": "Sentiment or Emotion Analyzer"
+            },
+            "startTime": {
+              "seconds": 1761113787,
+              "nanos": 300611000
+            },
+            "completeTime": {
+              "seconds": 1761113787,
+              "nanos": 302878000
+            },
+            "displayName": "Tool use Sentiment or Emotion Analyzer analyzeEmotion"
+          }, {
+            "startTime": {
+              "seconds": 1761113787,
+              "nanos": 302908000
+            },
+            "completeTime": {
+              "seconds": 1761113787,
+              "nanos": 820761000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 1062,
+                "conversationContextTokenCount": 529,
+                "totalOutputTokenCount": 11
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+              "action": "analyzeEmotion",
+              "inputActionParameters": {
+                "": {
+                  "user_message": "no i am feeling better now"
+                }
+              },
+              "displayName": "Sentiment or Emotion Analyzer"
+            },
+            "startTime": {
+              "seconds": 1761113787,
+              "nanos": 820823000
+            },
+            "completeTime": {
+              "seconds": 1761113787,
+              "nanos": 822971000
+            },
+            "displayName": "Tool use Sentiment or Emotion Analyzer analyzeEmotion"
+          }, {
+            "startTime": {
+              "seconds": 1761113787,
+              "nanos": 823003000
+            },
+            "completeTime": {
+              "seconds": 1761113788,
+              "nanos": 458551000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 1077,
+                "conversationContextTokenCount": 558,
+                "totalOutputTokenCount": 41
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "agentUtterance": {
+              "text": "That's wonderful to hear! I'm glad you're feeling better.\n\nIs there anything else I can help you with today, or would you like to just chat for a bit?\n"
+            },
+            "startTime": {
+              "seconds": 1761113788,
+              "nanos": 458576000
+            },
+            "completeTime": {
+              "seconds": 1761113788,
+              "nanos": 458596000
+            },
+            "displayName": "AGENT_UTTERANCE"
+          } ],
+          "startTime": {
+            "seconds": 1761113786,
+            "nanos": 949173000
+          },
+          "completeTime": {
+            "seconds": 1761113788,
+            "nanos": 459052000
+          },
+          "endState": "OUTPUT_STATE_PENDING"
+        } ]
+      }
+    },
+    "orderedExpectations": [ {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+            "action": "analyzeEmotion",
+            "outputActionParameters": {
+              "200": {
+                "intensity": "",
+                "sentiment": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+            "action": "analyzeEmotion",
+            "outputActionParameters": {
+              "200": {
+                "intensity": "",
+                "sentiment": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAgentReply": "That's wonderful to hear! I'm glad you're feeling better.\n\nIs there anything else I can help you with today, or would you like to just chat for a bit?\n"
+      } ]
+    } ],
+    "metricGoldens": [ {
+      "goldens": [ {
+        "goldenAgentUtterance": "That's wonderful to hear! I'm glad you're feeling better.\n\nIs there anything else I can help you with today, or would you like to just chat for a bit?\n"
+      } ]
+    } ]
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "no I am good"
+        }
+      },
+      "enableWebhook": true
+    },
+    "agentOutput": {
+      "queryResult": {
+        "text": "no I am good",
+        "languageCode": "en",
+        "responseMessages": [ {
+          "text": {
+            "text": [ "Great! I'm happy to hear that.\n\nIf you ever need anything else, don't hesitate to reach out. Take care!\n" ]
+          }
+        } ],
+        "intentDetectionConfidence": 1,
+        "diagnosticInfo": {
+          "Execution Trace": [ "customer: no I am good\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: analyzeEmotion\ninput:\n  user_message: no I am good\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: analyzeEmotion\ninput:\n  user_message: no I am good\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: respond\ninput: Great! I'm happy to hear that.\n\nIf you ever need anything else, don't hesitate to reach out. Take care!\n\nGot action \"respond\" from LLM, responding to the user and waiting for the next user input.\n" ],
+          "LLM Prompts": [ "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\noutput: null\n\ncustomer: i had a long day at work and boss made me work for extra hours with the same pay\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\noutput: null\n\ncustomer: can you suggest me if i want to quit my job\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: That's a big decision, and it's understandable that you're considering it, especially after experiences like the one you just described. I can't tell you whether or not you *should* quit your job, as that's a very personal choice with many factors to consider. However, I can help you think through some things that might be useful in making that decision.\n\nWould you like to explore some of the pros and cons of quitting, or perhaps discuss some steps you could take before making such a big change?\noutput: null\n\ncustomer: no i am feeling better now\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: That's wonderful to hear! I'm glad you're feeling better.\n\nIs there anything else I can help you with today, or would you like to just chat for a bit?\noutput: null\n\ncustomer: no I am good\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\noutput: null\n\ncustomer: i had a long day at work and boss made me work for extra hours with the same pay\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\noutput: null\n\ncustomer: can you suggest me if i want to quit my job\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: That's a big decision, and it's understandable that you're considering it, especially after experiences like the one you just described. I can't tell you whether or not you *should* quit your job, as that's a very personal choice with many factors to consider. However, I can help you think through some things that might be useful in making that decision.\n\nWould you like to explore some of the pros and cons of quitting, or perhaps discuss some steps you could take before making such a big change?\noutput: null\n\ncustomer: no i am feeling better now\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: That's wonderful to hear! I'm glad you're feeling better.\n\nIs there anything else I can help you with today, or would you like to just chat for a bit?\noutput: null\n\ncustomer: no I am good\n\naction: analyzeEmotion\ninput:\n  user_message: no I am good\noutput:\n  error: UNKNOWN:\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\noutput: null\n\ncustomer: i had a long day at work and boss made me work for extra hours with the same pay\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\noutput: null\n\ncustomer: can you suggest me if i want to quit my job\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: That's a big decision, and it's understandable that you're considering it, especially after experiences like the one you just described. I can't tell you whether or not you *should* quit your job, as that's a very personal choice with many factors to consider. However, I can help you think through some things that might be useful in making that decision.\n\nWould you like to explore some of the pros and cons of quitting, or perhaps discuss some steps you could take before making such a big change?\noutput: null\n\ncustomer: no i am feeling better now\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: That's wonderful to hear! I'm glad you're feeling better.\n\nIs there anything else I can help you with today, or would you like to just chat for a bit?\noutput: null\n\ncustomer: no I am good\n\naction: analyzeEmotion\ninput:\n  user_message: no I am good\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: no I am good\noutput:\n  error: UNKNOWN:\n" ],
+          "Response Id": "00f3a348-065b-4e7a-b2c3-c9eba00c24a4",
+          "Session Id": "07068420-47f7-4f5a-9897-d9ab263badc6"
+        },
+        "match": {
+          "matchType": "PLAYBOOK",
+          "confidence": 1
+        },
+        "advancedSettings": {
+          "speechSettings": {
+            "endpointerSensitivity": 90,
+            "noSpeechTimeout": {
+              "seconds": 8
+            },
+            "useTimeoutBasedEndpointing": true,
+            "models": [ {
+              "key": "en",
+              "value": "default"
+            } ]
+          },
+          "loggingSettings": {
+            "disableLogging": true
+          }
+        },
+        "generativeInfo": {
+          "currentPlaybooks": [ "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db" ],
+          "actionTracingInfo": {
+            "name": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/-/examples/-",
+            "actions": [ {
+              "userUtterance": {
+                "text": "no I am good"
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+                "action": "analyzeEmotion",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "user_message": "no I am good"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "analyzeEmotion"
+              },
+              "startTime": {
+                "seconds": 1761113857,
+                "nanos": 749254000
+              },
+              "completeTime": {
+                "seconds": 1761113857,
+                "nanos": 749254000
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+                "action": "analyzeEmotion",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "user_message": "no I am good"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "analyzeEmotion"
+              },
+              "startTime": {
+                "seconds": 1761113857,
+                "nanos": 749254000
+              },
+              "completeTime": {
+                "seconds": 1761113857,
+                "nanos": 749254000
+              }
+            }, {
+              "agentUtterance": {
+                "text": "Great! I'm happy to hear that.\n\nIf you ever need anything else, don't hesitate to reach out. Take care!\n"
+              }
+            } ],
+            "conversationState": "OUTPUT_STATE_PENDING"
+          }
+        },
+        "traceBlocks": [ {
+          "playbookTraceMetadata": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+            "displayName": "Mood Assessment Playbook"
+          },
+          "actions": [ {
+            "userUtterance": {
+              "text": "no I am good"
+            },
+            "startTime": {
+              "seconds": 1761113855,
+              "nanos": 800155000
+            },
+            "completeTime": {
+              "seconds": 1761113855,
+              "nanos": 800156000
+            },
+            "displayName": "USER_UTTERANCE"
+          }, {
+            "startTime": {
+              "seconds": 1761113855,
+              "nanos": 800171000
+            },
+            "completeTime": {
+              "seconds": 1761113856,
+              "nanos": 165225000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 1122,
+                "conversationContextTokenCount": 616,
+                "totalOutputTokenCount": 9
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+              "action": "analyzeEmotion",
+              "inputActionParameters": {
+                "": {
+                  "user_message": "no I am good"
+                }
+              },
+              "displayName": "Sentiment or Emotion Analyzer"
+            },
+            "startTime": {
+              "seconds": 1761113856,
+              "nanos": 165265000
+            },
+            "completeTime": {
+              "seconds": 1761113856,
+              "nanos": 167206000
+            },
+            "displayName": "Tool use Sentiment or Emotion Analyzer analyzeEmotion"
+          }, {
+            "startTime": {
+              "seconds": 1761113856,
+              "nanos": 167229000
+            },
+            "completeTime": {
+              "seconds": 1761113857,
+              "nanos": 236190000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 1135,
+                "conversationContextTokenCount": 643,
+                "totalOutputTokenCount": 9
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+              "action": "analyzeEmotion",
+              "inputActionParameters": {
+                "": {
+                  "user_message": "no I am good"
+                }
+              },
+              "displayName": "Sentiment or Emotion Analyzer"
+            },
+            "startTime": {
+              "seconds": 1761113857,
+              "nanos": 236226000
+            },
+            "completeTime": {
+              "seconds": 1761113857,
+              "nanos": 237768000
+            },
+            "displayName": "Tool use Sentiment or Emotion Analyzer analyzeEmotion"
+          }, {
+            "startTime": {
+              "seconds": 1761113857,
+              "nanos": 237787000
+            },
+            "completeTime": {
+              "seconds": 1761113857,
+              "nanos": 749086000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 1148,
+                "conversationContextTokenCount": 670,
+                "totalOutputTokenCount": 30
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "agentUtterance": {
+              "text": "Great! I'm happy to hear that.\n\nIf you ever need anything else, don't hesitate to reach out. Take care!\n"
+            },
+            "startTime": {
+              "seconds": 1761113857,
+              "nanos": 749111000
+            },
+            "completeTime": {
+              "seconds": 1761113857,
+              "nanos": 749129000
+            },
+            "displayName": "AGENT_UTTERANCE"
+          } ],
+          "startTime": {
+            "seconds": 1761113855,
+            "nanos": 797597000
+          },
+          "completeTime": {
+            "seconds": 1761113857,
+            "nanos": 749567000
+          },
+          "endState": "OUTPUT_STATE_PENDING"
+        } ]
+      }
+    },
+    "orderedExpectations": [ {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+            "action": "analyzeEmotion",
+            "outputActionParameters": {
+              "200": {
+                "intensity": "",
+                "sentiment": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+            "action": "analyzeEmotion",
+            "outputActionParameters": {
+              "200": {
+                "intensity": "",
+                "sentiment": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAgentReply": "Great! I'm happy to hear that.\n\nIf you ever need anything else, don't hesitate to reach out. Take care!\n"
+      } ]
+    } ],
+    "metricGoldens": [ {
+      "goldens": [ {
+        "goldenAgentUtterance": "Great! I'm happy to hear that.\n\nIf you ever need anything else, don't hesitate to reach out. Take care!\n"
+      } ]
+    } ]
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "thank you"
+        }
+      },
+      "enableWebhook": true
+    },
+    "agentOutput": {
+      "queryResult": {
+        "text": "thank you",
+        "languageCode": "en",
+        "responseMessages": [ {
+          "text": {
+            "text": [ "You're very welcome! Is there anything else I can assist you with today?\n" ]
+          }
+        } ],
+        "intentDetectionConfidence": 1,
+        "diagnosticInfo": {
+          "Execution Trace": [ "customer: thank you\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: analyzeEmotion\ninput:\n  user_message: thank you\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: respond\ninput: You're very welcome! Is there anything else I can assist you with today?\n\nGot action \"respond\" from LLM, responding to the user and waiting for the next user input.\n" ],
+          "LLM Prompts": [ "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\noutput: null\n\ncustomer: i had a long day at work and boss made me work for extra hours with the same pay\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\noutput: null\n\ncustomer: can you suggest me if i want to quit my job\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: That's a big decision, and it's understandable that you're considering it, especially after experiences like the one you just described. I can't tell you whether or not you *should* quit your job, as that's a very personal choice with many factors to consider. However, I can help you think through some things that might be useful in making that decision.\n\nWould you like to explore some of the pros and cons of quitting, or perhaps discuss some steps you could take before making such a big change?\noutput: null\n\ncustomer: no i am feeling better now\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: That's wonderful to hear! I'm glad you're feeling better.\n\nIs there anything else I can help you with today, or would you like to just chat for a bit?\noutput: null\n\ncustomer: no I am good\n\naction: analyzeEmotion\ninput:\n  user_message: no I am good\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: no I am good\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: Great! I'm happy to hear that.\n\nIf you ever need anything else, don't hesitate to reach out. Take care!\noutput: null\n\ncustomer: thank you\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: i am exhausted\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i am exhausted\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: I hear that you're feeling exhausted. I want to make sure I understand the intensity of what you're feeling to offer the best support. Can you tell me a little more about how this exhaustion is affecting you?\noutput: null\n\ncustomer: i had a long day at work and boss made me work for extra hours with the same pay\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: i had a long day at work and boss made me work for extra hours with the same pay\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: It sounds like you've had a really tough day. Working extra hours without additional pay can be incredibly frustrating and draining. It's completely understandable that you're feeling exhausted.\n\nI'm here to listen if you'd like to talk more about it.\noutput: null\n\ncustomer: can you suggest me if i want to quit my job\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: can you suggest me if i want to quit my job\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: That's a big decision, and it's understandable that you're considering it, especially after experiences like the one you just described. I can't tell you whether or not you *should* quit your job, as that's a very personal choice with many factors to consider. However, I can help you think through some things that might be useful in making that decision.\n\nWould you like to explore some of the pros and cons of quitting, or perhaps discuss some steps you could take before making such a big change?\noutput: null\n\ncustomer: no i am feeling better now\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: no i am feeling better now\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: That's wonderful to hear! I'm glad you're feeling better.\n\nIs there anything else I can help you with today, or would you like to just chat for a bit?\noutput: null\n\ncustomer: no I am good\n\naction: analyzeEmotion\ninput:\n  user_message: no I am good\noutput:\n  error: UNKNOWN:\n\naction: analyzeEmotion\ninput:\n  user_message: no I am good\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: Great! I'm happy to hear that.\n\nIf you ever need anything else, don't hesitate to reach out. Take care!\noutput: null\n\ncustomer: thank you\n\naction: analyzeEmotion\ninput:\n  user_message: thank you\noutput:\n  error: UNKNOWN:\n" ],
+          "Response Id": "979a4dea-19b7-4ded-b791-f6ba660edccc",
+          "Session Id": "07068420-47f7-4f5a-9897-d9ab263badc6"
+        },
+        "match": {
+          "matchType": "PLAYBOOK",
+          "confidence": 1
+        },
+        "advancedSettings": {
+          "speechSettings": {
+            "endpointerSensitivity": 90,
+            "noSpeechTimeout": {
+              "seconds": 8
+            },
+            "useTimeoutBasedEndpointing": true,
+            "models": [ {
+              "key": "en",
+              "value": "default"
+            } ]
+          },
+          "loggingSettings": {
+            "disableLogging": true
+          }
+        },
+        "generativeInfo": {
+          "currentPlaybooks": [ "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db" ],
+          "actionTracingInfo": {
+            "name": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/-/examples/-",
+            "actions": [ {
+              "userUtterance": {
+                "text": "thank you"
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+                "action": "analyzeEmotion",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "user_message": "thank you"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "analyzeEmotion"
+              },
+              "startTime": {
+                "seconds": 1761113890,
+                "nanos": 616705000
+              },
+              "completeTime": {
+                "seconds": 1761113890,
+                "nanos": 616705000
+              }
+            }, {
+              "agentUtterance": {
+                "text": "You're very welcome! Is there anything else I can assist you with today?\n"
+              }
+            } ],
+            "conversationState": "OUTPUT_STATE_PENDING"
+          }
+        },
+        "traceBlocks": [ {
+          "playbookTraceMetadata": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+            "displayName": "Mood Assessment Playbook"
+          },
+          "actions": [ {
+            "userUtterance": {
+              "text": "thank you"
+            },
+            "startTime": {
+              "seconds": 1761113889,
+              "nanos": 619951000
+            },
+            "completeTime": {
+              "seconds": 1761113889,
+              "nanos": 619951000
+            },
+            "displayName": "USER_UTTERANCE"
+          }, {
+            "startTime": {
+              "seconds": 1761113889,
+              "nanos": 619966000
+            },
+            "completeTime": {
+              "seconds": 1761113890,
+              "nanos": 165395000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 1180,
+                "conversationContextTokenCount": 715,
+                "totalOutputTokenCount": 7
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+              "action": "analyzeEmotion",
+              "inputActionParameters": {
+                "": {
+                  "user_message": "thank you"
+                }
+              },
+              "displayName": "Sentiment or Emotion Analyzer"
+            },
+            "startTime": {
+              "seconds": 1761113890,
+              "nanos": 165447000
+            },
+            "completeTime": {
+              "seconds": 1761113890,
+              "nanos": 178652000
+            },
+            "displayName": "Tool use Sentiment or Emotion Analyzer analyzeEmotion"
+          }, {
+            "startTime": {
+              "seconds": 1761113890,
+              "nanos": 178684000
+            },
+            "completeTime": {
+              "seconds": 1761113890,
+              "nanos": 616403000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 1191,
+                "conversationContextTokenCount": 740,
+                "totalOutputTokenCount": 18
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "agentUtterance": {
+              "text": "You're very welcome! Is there anything else I can assist you with today?\n"
+            },
+            "startTime": {
+              "seconds": 1761113890,
+              "nanos": 616442000
+            },
+            "completeTime": {
+              "seconds": 1761113890,
+              "nanos": 616472000
+            },
+            "displayName": "AGENT_UTTERANCE"
+          } ],
+          "startTime": {
+            "seconds": 1761113889,
+            "nanos": 615313000
+          },
+          "completeTime": {
+            "seconds": 1761113890,
+            "nanos": 617246000
+          },
+          "endState": "OUTPUT_STATE_PENDING"
+        } ]
+      }
+    },
+    "orderedExpectations": [ {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+            "action": "analyzeEmotion",
+            "outputActionParameters": {
+              "200": {
+                "intensity": "",
+                "sentiment": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAgentReply": "You're very welcome! Is there anything else I can assist you with today?\n"
+      } ]
+    } ],
+    "metricGoldens": [ {
+      "goldens": [ {
+        "goldenAgentUtterance": "You're very welcome! Is there anything else I can assist you with today?\n"
+      } ]
+    } ]
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "No"
+        }
+      },
+      "enableWebhook": true
+    },
+    "agentOutput": {
+      "queryResult": {
+      
+      }
+    },
+    "orderedExpectations": [ {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+            "action": "analyzeEmotion",
+            "outputActionParameters": {
+              "200": {
+                "intensity": "",
+                "sentiment": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAction": {
+          "playbookInvocation": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+            "playbookState": "OUTPUT_STATE_OK"
+          }
+        }
+      } ]
+    } ],
+    "metricGoldens": [ {
+      "goldens": [ {
+        "goldenAgentUtterance": ""
+      } ]
+    } ]
+  } ],
+  "orderedExpectations": [ {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/80151c0a-82e1-4e69-9c2c-964018d74a13",
+          "action": "validateOutput",
+          "outputActionParameters": {
+            "200": {
+              "corrected_text": "",
+              "flags": [ "" ],
+              "is_safe": true,
+              "notes": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "playbookTransition": {
+          "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db"
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+          "action": "analyzeEmotion",
+          "outputActionParameters": {
+            "200": {
+              "intensity": "",
+              "sentiment": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+          "action": "analyzeEmotion",
+          "outputActionParameters": {
+            "200": {
+              "intensity": "",
+              "sentiment": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+          "action": "analyzeEmotion",
+          "outputActionParameters": {
+            "200": {
+              "intensity": "",
+              "sentiment": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+          "action": "analyzeEmotion",
+          "outputActionParameters": {
+            "200": {
+              "intensity": "",
+              "sentiment": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+          "action": "analyzeEmotion",
+          "outputActionParameters": {
+            "200": {
+              "intensity": "",
+              "sentiment": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+          "action": "analyzeEmotion",
+          "outputActionParameters": {
+            "200": {
+              "intensity": "",
+              "sentiment": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+          "action": "analyzeEmotion",
+          "outputActionParameters": {
+            "200": {
+              "intensity": "",
+              "sentiment": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+          "action": "analyzeEmotion",
+          "outputActionParameters": {
+            "200": {
+              "intensity": "",
+              "sentiment": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+          "action": "analyzeEmotion",
+          "outputActionParameters": {
+            "200": {
+              "intensity": "",
+              "sentiment": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+          "action": "analyzeEmotion",
+          "outputActionParameters": {
+            "200": {
+              "intensity": "",
+              "sentiment": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+          "action": "analyzeEmotion",
+          "outputActionParameters": {
+            "200": {
+              "intensity": "",
+              "sentiment": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+          "action": "analyzeEmotion",
+          "outputActionParameters": {
+            "200": {
+              "intensity": "",
+              "sentiment": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "playbookInvocation": {
+          "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+          "playbookState": "OUTPUT_STATE_OK"
+        }
+      }
+    } ]
+  } ],
+  "createTime": {
+    "seconds": 1761113923,
+    "nanos": 192594000
+  },
+  "testConfig": {
+    "startPlaybook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/220a1d6f-f573-46b0-b153-8b8c1f4dc103/versions/0",
+    "textSession": {
+    
+    }
+  },
+  "languageCode": "en"
+}

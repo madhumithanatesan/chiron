@@ -1,0 +1,14 @@
+{
+  "name": "6af9439b-23d3-43d4-b2f2-72325e0d4384",
+  "displayName": "Empathetic Response Generator",
+  "description": "Generates compassionate, context-aware, and ethically safe responses to user messages about their emotional state. \nThis tool analyzes the user's input and creates empathetic replies following therapeutic communication principles \nsuch as validation, reflection, and supportive encouragement. \nIt does not provide diagnosis or medical advice and must escalate crisis or suicidal language to emergency help paths.",
+  "openApiSpec": {
+    "authentication": {
+      "serviceAgentAuthConfig": {
+        "serviceAgentAuth": "ID_TOKEN"
+      }
+    },
+    "ignoreUnknownFields": true
+  },
+  "toolType": "CUSTOMIZED_TOOL"
+}

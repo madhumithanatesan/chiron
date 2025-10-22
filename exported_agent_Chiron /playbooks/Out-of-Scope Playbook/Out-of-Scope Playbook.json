@@ -1,0 +1,23 @@
+{
+  "name": "cbf20bc0-5e9e-4094-a4c8-98167ad195fe",
+  "displayName": "Out-of-Scope Playbook",
+  "goal": "To handle queries or requests outside the chatbot’s ethical or functional boundaries gracefully and safely.",
+  "tokenCount": 140,
+  "referencedPlaybooks": [ "Supportive Conversation Playbook" ],
+  "referencedTools": [ "Hallucination Guard" ],
+  "instruction": {
+    "steps": [ {
+      "text": "Inform the user gently that the chatbot cannot give medical advice."
+    }, {
+      "text": "Use ${TOOL:Hallucination Guard} to ensure only safe guidance is shared."
+    }, {
+      "text": "Offer relevant verified resources instead of repeating disclaimers."
+    }, {
+      "text": "If user still needs support, go to ${PLAYBOOK:Supportive Conversation Playbook}."
+    } ]
+  },
+  "playbookType": "ROUTINE",
+  "codeBlock": {
+  
+  }
+}

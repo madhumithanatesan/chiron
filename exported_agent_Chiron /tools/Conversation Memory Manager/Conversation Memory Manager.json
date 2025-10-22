@@ -1,0 +1,14 @@
+{
+  "name": "84a479cc-206d-4f0e-af1a-2cd2589152a2",
+  "displayName": "Conversation Memory Manager",
+  "description": "Maintains short-term and long-term conversation memory to prevent repeated questions and preserve emotional context across turns.",
+  "openApiSpec": {
+    "authentication": {
+      "serviceAgentAuthConfig": {
+        "serviceAgentAuth": "ID_TOKEN"
+      }
+    },
+    "ignoreUnknownFields": true
+  },
+  "toolType": "CUSTOMIZED_TOOL"
+}

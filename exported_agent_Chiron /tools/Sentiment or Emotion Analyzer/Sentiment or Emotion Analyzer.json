@@ -1,0 +1,9 @@
+{
+  "name": "33fe0f35-f510-4a52-aa7d-da1e29bee709",
+  "displayName": "Sentiment or Emotion Analyzer",
+  "description": "Analyzes a user's message to determine emotional tone and intensity.\nReturns a structured sentiment label (positive, neutral, negative) and optionally a mood intensity score (low, moderate, high).\nUsed by the chatbot to route users to the correct empathetic response path.",
+  "openApiSpec": {
+    "ignoreUnknownFields": true
+  },
+  "toolType": "CUSTOMIZED_TOOL"
+}

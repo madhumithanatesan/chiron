@@ -1,0 +1,25 @@
+{
+  "name": "dc91ed57-934e-460f-ac71-1365356e15a9",
+  "displayName": "Supportive Conversation Playbook",
+  "goal": "To sustain empathetic, reflective dialogue that helps users process emotions and feel understood.",
+  "tokenCount": 214,
+  "referencedPlaybooks": [ "Crisis Support Playbook", "Closure Playbook" ],
+  "referencedTools": [ "Empathetic Response Generator", "Hallucination Guard" ],
+  "instruction": {
+    "steps": [ {
+      "text": "Listen actively and reflect feelings without repeating prior questions."
+    }, {
+      "text": "Generate empathetic replies with ${TOOL:Empathetic Response Generator}."
+    }, {
+      "text": "Validate responses using ${TOOL:Hallucination Guard}."
+    }, {
+      "text": "Offer gentle follow-ups or coping suggestions if not already discussed."
+    }, {
+      "text": "If distress rises, move to ${PLAYBOOK:Crisis Support Playbook}; if improved, to ${PLAYBOOK:Closure Playbook}."
+    } ]
+  },
+  "playbookType": "ROUTINE",
+  "codeBlock": {
+  
+  }
+}

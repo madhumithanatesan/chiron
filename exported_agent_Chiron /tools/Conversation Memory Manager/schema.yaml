@@ -1,0 +1,82 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Conversation Memory Manager API",
+    "version": "1.0.0",
+    "description": "Stores and retrieves context history to avoid repetition and maintain continuity in user interactions."
+  },
+  "paths": {
+    "/memory": {
+      "post": {
+        "summary": "Update or retrieve conversation memory",
+        "operationId": "manageMemory",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "user_id": {
+                    "type": "string",
+                    "description": "Unique user identifier"
+                  },
+                  "latest_message": {
+                    "type": "string",
+                    "description": "Current user message"
+                  },
+                  "context_state": {
+                    "type": "object",
+                    "description": "Previous conversation memory"
+                  },
+                  "intent_detected": {
+                    "type": "string",
+                    "description": "Recognized intent of the message"
+                  }
+                },
+                "required": [
+                  "user_id",
+                  "latest_message"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Memory management result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "should_repeat": {
+                      "type": "boolean",
+                      "description": "Indicates if similar question already asked"
+                    },
+                    "previous_context": {
+                      "type": "string",
+                      "description": "Summary of last few turns"
+                    },
+                    "update_status": {
+                      "type": "string",
+                      "enum": [
+                        "stored",
+                        "retrieved",
+                        "skipped"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "should_repeat",
+                    "previous_context"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

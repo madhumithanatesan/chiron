@@ -1,0 +1,403 @@
+{
+  "name": "138b7505-4374-49d1-bec8-1cf39502a2ff",
+  "displayName": "TS03",
+  "conversationTurns": [ {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "hi"
+        }
+      },
+      "enableWebhook": true
+    },
+    "agentOutput": {
+      "queryResult": {
+        "text": "hi",
+        "languageCode": "en",
+        "responseMessages": [ {
+          "text": {
+            "text": [ "Hello there! I'm here to listen and support you.\n\n*Just so you know:* I’m here to support you — to listen, reflect, and help you feel heard. _But_ **_I’m not a licensed therapist_**. _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?" ]
+          }
+        } ],
+        "intentDetectionConfidence": 1,
+        "diagnosticInfo": {
+          "Execution Trace": [ "Transitioned to playbook \"Welcome \u0026 Disclaimer Playbook\".\n\ncustomer: hi\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: manageMemory\ninput:\n  user_id: default\n  latest_message: hi\n  intent_detected: greeting\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: validateOutput\ninput:\n  input_text: |-\n    Hello there! I'm here to listen and support you.\n  \n    *_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard. _But_ **_I’m not a licensed therapist_**. _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n  \n    How are you feeling today?\n  user_message: hi\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: respond\ninput: Hello there! I'm here to listen and support you.\n\n*Just so you know:* I’m here to support you — to listen, reflect, and help you feel heard. _But_ **_I’m not a licensed therapist_**. _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?\n\nGot action \"respond\" from LLM, responding to the user and waiting for the next user input.\n" ],
+          "LLM Prompts": [ "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To greet the user warmly, set a safe and supportive tone, and communicate the chatbot’s non-clinical role before beginning the emotional conversation.\n\n- Greet the user with empathy and warmth.\n- Display the disclaimer text clearly with formatting:\n  - *_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n  - _But_ **_I’m not a licensed therapist_**.\n  - _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n- Use `Hallucination_Guard` to validate the disclaimer and greeting for factual and ethical compliance.\n- Check `Conversation_Memory_Manager` to ensure the disclaimer isn’t repeated within the same session.\n- Ask the user how they are feeling today in a calm and empathetic tone.\n- Pass the user’s message to `Mood_Assessment_Playbook` for emotional analysis and next-step routing.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncustomer: hi\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To greet the user warmly, set a safe and supportive tone, and communicate the chatbot’s non-clinical role before beginning the emotional conversation.\n\n- Greet the user with empathy and warmth.\n- Display the disclaimer text clearly with formatting:\n  - *_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n  - _But_ **_I’m not a licensed therapist_**.\n  - _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n- Use `Hallucination_Guard` to validate the disclaimer and greeting for factual and ethical compliance.\n- Check `Conversation_Memory_Manager` to ensure the disclaimer isn’t repeated within the same session.\n- Ask the user how they are feeling today in a calm and empathetic tone.\n- Pass the user’s message to `Mood_Assessment_Playbook` for emotional analysis and next-step routing.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncustomer: hi\n\naction: manageMemory\ninput:\n  user_id: default\n  latest_message: hi\n  intent_detected: greeting\noutput:\n  error: UNKNOWN:\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To greet the user warmly, set a safe and supportive tone, and communicate the chatbot’s non-clinical role before beginning the emotional conversation.\n\n- Greet the user with empathy and warmth.\n- Display the disclaimer text clearly with formatting:\n  - *_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n  - _But_ **_I’m not a licensed therapist_**.\n  - _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n- Use `Hallucination_Guard` to validate the disclaimer and greeting for factual and ethical compliance.\n- Check `Conversation_Memory_Manager` to ensure the disclaimer isn’t repeated within the same session.\n- Ask the user how they are feeling today in a calm and empathetic tone.\n- Pass the user’s message to `Mood_Assessment_Playbook` for emotional analysis and next-step routing.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncustomer: hi\n\naction: manageMemory\ninput:\n  user_id: default\n  latest_message: hi\n  intent_detected: greeting\noutput:\n  error: UNKNOWN:\n\naction: validateOutput\ninput:\n  input_text: |-\n    Hello there! I'm here to listen and support you.\n  \n    *_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard. _But_ **_I’m not a licensed therapist_**. _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n  \n    How are you feeling today?\n  user_message: hi\noutput:\n  error: UNKNOWN:\n" ],
+          "Response Id": "e73605d3-3f47-427a-89b6-f954c575221c",
+          "Session Id": "ca333227-eb47-4e43-9ce4-1a5c36ed0a08"
+        },
+        "match": {
+          "matchType": "PLAYBOOK",
+          "confidence": 1
+        },
+        "advancedSettings": {
+          "speechSettings": {
+            "endpointerSensitivity": 90,
+            "noSpeechTimeout": {
+              "seconds": 8
+            },
+            "useTimeoutBasedEndpointing": true,
+            "models": [ {
+              "key": "en",
+              "value": "default"
+            } ]
+          },
+          "loggingSettings": {
+            "disableLogging": true
+          }
+        },
+        "generativeInfo": {
+          "currentPlaybooks": [ "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/220a1d6f-f573-46b0-b153-8b8c1f4dc103" ],
+          "actionTracingInfo": {
+            "name": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/-/examples/-",
+            "actions": [ {
+              "userUtterance": {
+                "text": "hi"
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/84a479cc-206d-4f0e-af1a-2cd2589152a2",
+                "action": "manageMemory",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "intent_detected": "greeting",
+                    "latest_message": "hi",
+                    "user_id": "default"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "manageMemory"
+              },
+              "startTime": {
+                "seconds": 1761116456,
+                "nanos": 140437000
+              },
+              "completeTime": {
+                "seconds": 1761116456,
+                "nanos": 140437000
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/80151c0a-82e1-4e69-9c2c-964018d74a13",
+                "action": "validateOutput",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "input_text": "Hello there! I'm here to listen and support you.\n\n*_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard. _But_ **_I’m not a licensed therapist_**. _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?",
+                    "policy_mode": "strict",
+                    "user_message": "hi"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "validateOutput"
+              },
+              "startTime": {
+                "seconds": 1761116456,
+                "nanos": 140437000
+              },
+              "completeTime": {
+                "seconds": 1761116456,
+                "nanos": 140438000
+              }
+            }, {
+              "agentUtterance": {
+                "text": "Hello there! I'm here to listen and support you.\n\n*Just so you know:* I’m here to support you — to listen, reflect, and help you feel heard. _But_ **_I’m not a licensed therapist_**. _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?"
+              }
+            } ],
+            "conversationState": "OUTPUT_STATE_PENDING"
+          }
+        },
+        "traceBlocks": [ {
+          "playbookTraceMetadata": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/220a1d6f-f573-46b0-b153-8b8c1f4dc103",
+            "displayName": "Welcome \u0026 Disclaimer Playbook"
+          },
+          "actions": [ {
+            "userUtterance": {
+              "text": "hi"
+            },
+            "startTime": {
+              "seconds": 1761116453,
+              "nanos": 956035000
+            },
+            "completeTime": {
+              "seconds": 1761116453,
+              "nanos": 956035000
+            },
+            "displayName": "USER_UTTERANCE"
+          }, {
+            "startTime": {
+              "seconds": 1761116453,
+              "nanos": 956059000
+            },
+            "completeTime": {
+              "seconds": 1761116454,
+              "nanos": 655743000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 652,
+                "conversationContextTokenCount": 3,
+                "totalOutputTokenCount": 14
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/84a479cc-206d-4f0e-af1a-2cd2589152a2",
+              "action": "manageMemory",
+              "inputActionParameters": {
+                "": {
+                  "intent_detected": "greeting",
+                  "latest_message": "hi",
+                  "user_id": "default"
+                }
+              },
+              "displayName": "Conversation Memory Manager"
+            },
+            "startTime": {
+              "seconds": 1761116454,
+              "nanos": 655780000
+            },
+            "completeTime": {
+              "seconds": 1761116454,
+              "nanos": 676968000
+            },
+            "displayName": "Tool use Conversation Memory Manager manageMemory"
+          }, {
+            "startTime": {
+              "seconds": 1761116454,
+              "nanos": 677014000
+            },
+            "completeTime": {
+              "seconds": 1761116455,
+              "nanos": 503593000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 670,
+                "conversationContextTokenCount": 41,
+                "totalOutputTokenCount": 91
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/80151c0a-82e1-4e69-9c2c-964018d74a13",
+              "action": "validateOutput",
+              "inputActionParameters": {
+                "": {
+                  "input_text": "Hello there! I'm here to listen and support you.\n\n*_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard. _But_ **_I’m not a licensed therapist_**. _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?",
+                  "user_message": "hi"
+                }
+              },
+              "displayName": "Hallucination Guard"
+            },
+            "startTime": {
+              "seconds": 1761116455,
+              "nanos": 503628000
+            },
+            "completeTime": {
+              "seconds": 1761116455,
+              "nanos": 518404000
+            },
+            "displayName": "Tool use Hallucination Guard validateOutput"
+          }, {
+            "startTime": {
+              "seconds": 1761116455,
+              "nanos": 518426000
+            },
+            "completeTime": {
+              "seconds": 1761116456,
+              "nanos": 140268000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 765,
+                "conversationContextTokenCount": 162,
+                "totalOutputTokenCount": 81
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "agentUtterance": {
+              "text": "Hello there! I'm here to listen and support you.\n\n*Just so you know:* I’m here to support you — to listen, reflect, and help you feel heard. _But_ **_I’m not a licensed therapist_**. _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?"
+            },
+            "startTime": {
+              "seconds": 1761116456,
+              "nanos": 140296000
+            },
+            "completeTime": {
+              "seconds": 1761116456,
+              "nanos": 140321000
+            },
+            "displayName": "AGENT_UTTERANCE"
+          } ],
+          "startTime": {
+            "seconds": 1761116453,
+            "nanos": 953932000
+          },
+          "completeTime": {
+            "seconds": 1761116456,
+            "nanos": 140688000
+          },
+          "endState": "OUTPUT_STATE_PENDING"
+        } ]
+      }
+    },
+    "orderedExpectations": [ {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/84a479cc-206d-4f0e-af1a-2cd2589152a2",
+            "action": "manageMemory",
+            "outputActionParameters": {
+              "200": {
+                "previous_context": "",
+                "should_repeat": true,
+                "update_status": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/80151c0a-82e1-4e69-9c2c-964018d74a13",
+            "action": "validateOutput",
+            "outputActionParameters": {
+              "200": {
+                "corrected_text": "",
+                "flags": [ "" ],
+                "is_safe": true,
+                "notes": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAgentReply": "Hello there! I'm here to listen and support you.\n\n*Just so you know:* I’m here to support you — to listen, reflect, and help you feel heard. _But_ **_I’m not a licensed therapist_**. _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?"
+      } ]
+    } ],
+    "metricGoldens": [ {
+      "goldens": [ {
+        "goldenAgentUtterance": "Hello there! I'm here to listen and support you.\n\n*Just so you know:* I’m here to support you — to listen, reflect, and help you feel heard. _But_ **_I’m not a licensed therapist_**. _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?"
+      } ]
+    } ]
+  } ],
+  "orderedExpectations": [ {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/84a479cc-206d-4f0e-af1a-2cd2589152a2",
+          "action": "manageMemory",
+          "outputActionParameters": {
+            "200": {
+              "previous_context": "",
+              "should_repeat": true,
+              "update_status": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/80151c0a-82e1-4e69-9c2c-964018d74a13",
+          "action": "validateOutput",
+          "outputActionParameters": {
+            "200": {
+              "corrected_text": "",
+              "flags": [ "" ],
+              "is_safe": true,
+              "notes": ""
+            }
+          }
+        }
+      }
+    } ]
+  } ],
+  "createTime": {
+    "seconds": 1761116467,
+    "nanos": 59193000
+  },
+  "testConfig": {
+    "startPlaybook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/220a1d6f-f573-46b0-b153-8b8c1f4dc103/versions/0",
+    "textSession": {
+    
+    }
+  },
+  "languageCode": "en"
+}

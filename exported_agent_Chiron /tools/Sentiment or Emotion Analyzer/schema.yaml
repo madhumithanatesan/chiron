@@ -1,0 +1,57 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Sentiment or Emotion Analyzer API",
+    "version": "1.0.0",
+    "description": "Analyzes user input to detect emotional sentiment and intensity."
+  },
+  "paths": {
+    "/analyze_emotion": {
+      "post": {
+        "summary": "Analyze emotion and sentiment",
+        "operationId": "analyzeEmotion",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "user_message": {
+                    "type": "string",
+                    "description": "User's most recent message."
+                  }
+                },
+                "required": ["user_message"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Successful sentiment analysis",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "sentiment": {
+                      "type": "string",
+                      "enum": ["positive", "neutral", "negative"],
+                      "description": "Overall emotional sentiment of the message."
+                    },
+                    "intensity": {
+                      "type": "string",
+                      "enum": ["low", "moderate", "high"],
+                      "description": "Intensity of the detected emotion."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
