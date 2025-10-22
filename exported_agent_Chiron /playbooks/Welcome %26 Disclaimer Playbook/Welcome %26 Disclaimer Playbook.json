@@ -1,0 +1,34 @@
+{
+  "name": "220a1d6f-f573-46b0-b153-8b8c1f4dc103",
+  "displayName": "Welcome \u0026 Disclaimer Playbook",
+  "goal": " To greet the user warmly, set a safe and supportive tone, and communicate the chatbot’s non-clinical role before beginning the emotional conversation.",
+  "tokenCount": 292,
+  "referencedPlaybooks": [ "Mood Assessment Playbook" ],
+  "referencedTools": [ "Hallucination Guard", "Conversation Memory Manager" ],
+  "instruction": {
+    "steps": [ {
+      "text": "Greet the user with empathy and warmth."
+    }, {
+      "text": "Display the disclaimer text clearly with formatting:",
+      "steps": [ {
+        "text": "*_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard."
+      }, {
+        "text": "_But_ **_I’m not a licensed therapist_**."
+      }, {
+        "text": "_If you’re ever in danger or need urgent help, please contact a local helpline right away_."
+      } ]
+    }, {
+      "text": "Use ${TOOL:Hallucination Guard} to validate the disclaimer and greeting for factual and ethical compliance."
+    }, {
+      "text": "Check ${TOOL:Conversation Memory Manager} to ensure the disclaimer isn’t repeated within the same session."
+    }, {
+      "text": "Ask the user how they are feeling today in a calm and empathetic tone."
+    }, {
+      "text": "Pass the user’s message to ${PLAYBOOK:Mood Assessment Playbook} for emotional analysis and next-step routing."
+    } ]
+  },
+  "playbookType": "ROUTINE",
+  "codeBlock": {
+  
+  }
+}

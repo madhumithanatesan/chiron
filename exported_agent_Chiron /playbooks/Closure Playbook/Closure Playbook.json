@@ -1,0 +1,25 @@
+{
+  "name": "aa9b8cfb-1516-4689-a9e9-648d815867e0",
+  "displayName": "Closure Playbook",
+  "goal": "To end the interaction on a compassionate note, reinforcing hope and safety.",
+  "tokenCount": 131,
+  "referencedTools": [ "Hallucination Guard" ],
+  "instruction": {
+    "steps": [ {
+      "text": "Summarize the session without repeating previous statements."
+    }, {
+      "text": "Show one random closing suggestion, e.g.,",
+      "steps": [ {
+        "text": "\"Upcoming wellness event: 'Morning Breathwork Session – Online, Oct 28, 9 AM'.\""
+      } ]
+    }, {
+      "text": "Validate final text with ${TOOL:Hallucination Guard}."
+    }, {
+      "text": "Thank the user kindly and close with reassurance: “You’re not alone; take care of yourself.”"
+    } ]
+  },
+  "playbookType": "ROUTINE",
+  "codeBlock": {
+  
+  }
+}

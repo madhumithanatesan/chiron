@@ -1,0 +1,9 @@
+{
+  "name": "80151c0a-82e1-4e69-9c2c-964018d74a13",
+  "displayName": "Hallucination Guard",
+  "description": "Validates LLM outputs for factuality and policy safety; returns corrected text and flags.",
+  "openApiSpec": {
+    "ignoreUnknownFields": true
+  },
+  "toolType": "CUSTOMIZED_TOOL"
+}

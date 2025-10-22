@@ -1,0 +1,27 @@
+{
+  "name": "f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+  "displayName": "Mood Assessment Playbook",
+  "goal": "To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.",
+  "tokenCount": 291,
+  "referencedPlaybooks": [ "Crisis Support Playbook", "Supportive Conversation Playbook", "Self-Help \u0026 Education Playbook" ],
+  "referencedTools": [ "Sentiment or Emotion Analyzer", "Hallucination Guard", "Conversation Memory Manager" ],
+  "instruction": {
+    "steps": [ {
+      "text": "Use ${TOOL:Sentiment or Emotion Analyzer} to detect emotion and intensity."
+    }, {
+      "text": "Prevent repetition by checking ${TOOL:Conversation Memory Manager} before asking new questions."
+    }, {
+      "text": "If intensity is **high**, go to ${PLAYBOOK:Crisis Support Playbook}."
+    }, {
+      "text": "If **moderate**, go to ${PLAYBOOK:Supportive Conversation Playbook}."
+    }, {
+      "text": "If **mild or neutral**, go to ${PLAYBOOK:Self-Help \u0026 Education Playbook}."
+    }, {
+      "text": "Use ${TOOL:Hallucination Guard} to validate interpretations before replying."
+    } ]
+  },
+  "playbookType": "ROUTINE",
+  "codeBlock": {
+  
+  }
+}

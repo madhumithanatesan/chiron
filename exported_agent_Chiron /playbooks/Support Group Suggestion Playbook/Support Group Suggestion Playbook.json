@@ -1,0 +1,28 @@
+{
+  "name": "c26aa771-27c9-4000-95ad-b7342ab72d44",
+  "displayName": "Support Group Suggestion Playbook",
+  "goal": "To connect users with peer or professional group-support events that encourage social belonging and shared healing.",
+  "tokenCount": 209,
+  "referencedPlaybooks": [ "Closure Playbook" ],
+  "referencedTools": [ "Hallucination Guard", "Conversation Memory Manager" ],
+  "instruction": {
+    "steps": [ {
+      "text": "Randomly suggest one or two example therapy or peer-support sessions, e.g.,",
+      "steps": [ {
+        "text": "\"Community Stress Management Meetup – Milan, Oct 26, 6 PM\""
+      }, {
+        "text": "\"Online Therapy Talk: Coping with Anxiety – Oct 27, 8 PM\""
+      } ]
+    }, {
+      "text": "Avoid duplicates using ${TOOL:Conversation Memory Manager}."
+    }, {
+      "text": "Validate text with ${TOOL:Hallucination Guard}."
+    }, {
+      "text": "End with empathy or route to ${PLAYBOOK:Closure Playbook}."
+    } ]
+  },
+  "playbookType": "ROUTINE",
+  "codeBlock": {
+  
+  }
+}

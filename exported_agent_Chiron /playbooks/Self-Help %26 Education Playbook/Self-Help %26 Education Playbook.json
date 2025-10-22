@@ -1,0 +1,28 @@
+{
+  "name": "d8dd8680-4b09-40ed-99b2-1b26481af46c",
+  "displayName": "Self-Help \u0026 Education Playbook",
+  "goal": "To provide users with educational mental-health resources and practical coping strategies for mild stress or informational needs.",
+  "tokenCount": 213,
+  "referencedPlaybooks": [ "Support Group Suggestion Playbook", "Supportive Conversation Playbook" ],
+  "referencedTools": [ "Hallucination Guard" ],
+  "instruction": {
+    "steps": [ {
+      "text": "Provide factual, non-repetitive wellness tips (mindfulness, sleep hygiene, short exercise)."
+    }, {
+      "text": "Validate advice with ${TOOL:Hallucination Guard}."
+    }, {
+      "text": "Randomly display a therapy event, e.g.,",
+      "steps": [ {
+        "text": "\"Upcoming event: 'Evening Mindfulness Circle' – Online, Oct 25, 7 PM CST.\""
+      } ]
+    }, {
+      "text": "If user seeks peer support, go to ${PLAYBOOK:Support Group Suggestion Playbook}."
+    }, {
+      "text": "If mood worsens, return to ${PLAYBOOK:Supportive Conversation Playbook}."
+    } ]
+  },
+  "playbookType": "ROUTINE",
+  "codeBlock": {
+  
+  }
+}

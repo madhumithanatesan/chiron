@@ -1,0 +1,54 @@
+{
+  "openapi": "3.0.0",
+  "info": { "title": "Hallucination Guard API", "version": "1.0.0" },
+  "paths": {
+    "/validate": {
+      "post": {
+        "summary": "Validate and sanitize model output",
+        "operationId": "validateOutput",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "input_text": { "type": "string", "description": "Model draft reply to check." },
+                  "user_message": { "type": "string", "description": "Original user input for context." },
+                  "knowledge_base": { "type": "array", "items": { "type": "string" }, "description": "Trusted facts/URLs/snippets." },
+                  "policy_mode": { "type": "string", "enum": ["strict","standard"], "default": "strict" }
+                },
+                "required": ["input_text","user_message"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Validation result",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "is_safe": { "type": "boolean" },
+                    "flags": {
+                      "type": "array",
+                      "items": { "type": "string", "enum": [
+                        "unsupported_claim","medical_advice","diagnosis",
+                        "speculation","privacy_risk","self_harm_missing_escalation"
+                      ] }
+                    },
+                    "corrected_text": { "type": "string", "description": "Sanitized, non-claiming reply." },
+                    "notes": { "type": "string" }
+                  },
+                  "required": ["is_safe","flags","corrected_text"]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,906 @@
+{
+  "name": "3e723c18-b0d6-4174-9d78-17da1fc3b5ad",
+  "displayName": "TS02",
+  "conversationTurns": [ {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "sup"
+        }
+      },
+      "enableWebhook": true
+    },
+    "agentOutput": {
+      "queryResult": {
+        "text": "sup",
+        "languageCode": "en",
+        "responseMessages": [ {
+          "text": {
+            "text": [ "Hello there! I'm here to listen and support you.\n\n\n\n**_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n\n_But_ **_I’m not a licensed therapist_**.\n\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?" ]
+          }
+        } ],
+        "intentDetectionConfidence": 1,
+        "diagnosticInfo": {
+          "Execution Trace": [ "Transitioned to playbook \"Welcome \u0026 Disclaimer Playbook\".\n\ncustomer: sup\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: validateOutput\ninput:\n  input_text: |-\n    Hello there! I'm here to listen and support you.\n  \n  \n  \n    **_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n  \n    _But_ **_I’m not a licensed therapist_**.\n  \n    _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n  \n    How are you feeling today?\n  user_message: sup\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: respond\ninput: Hello there! I'm here to listen and support you.\n\n\n\n**_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n\n_But_ **_I’m not a licensed therapist_**.\n\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?\n\nGot action \"respond\" from LLM, responding to the user and waiting for the next user input.\n" ],
+          "LLM Prompts": [ "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To greet the user warmly, set a safe and supportive tone, and communicate the chatbot’s non-clinical role before beginning the emotional conversation.\n\n- Greet the user with empathy and warmth.\n- Display the disclaimer text clearly with formatting:\n  - *_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n  - _But_ **_I’m not a licensed therapist_**.\n  - _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n- Use `Hallucination_Guard` to validate the disclaimer and greeting for factual and ethical compliance.\n- Check `Conversation_Memory_Manager` to ensure the disclaimer isn’t repeated within the same session.\n- Ask the user how they are feeling today in a calm and empathetic tone.\n- Pass the user’s message to `Mood_Assessment_Playbook` for emotional analysis and next-step routing.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncustomer: sup\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To greet the user warmly, set a safe and supportive tone, and communicate the chatbot’s non-clinical role before beginning the emotional conversation.\n\n- Greet the user with empathy and warmth.\n- Display the disclaimer text clearly with formatting:\n  - *_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n  - _But_ **_I’m not a licensed therapist_**.\n  - _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n- Use `Hallucination_Guard` to validate the disclaimer and greeting for factual and ethical compliance.\n- Check `Conversation_Memory_Manager` to ensure the disclaimer isn’t repeated within the same session.\n- Ask the user how they are feeling today in a calm and empathetic tone.\n- Pass the user’s message to `Mood_Assessment_Playbook` for emotional analysis and next-step routing.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncustomer: sup\n\naction: validateOutput\ninput:\n  input_text: |-\n    Hello there! I'm here to listen and support you.\n  \n  \n  \n    **_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n  \n    _But_ **_I’m not a licensed therapist_**.\n  \n    _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n  \n    How are you feeling today?\n  user_message: sup\noutput:\n  error: UNKNOWN:\n" ],
+          "Response Id": "169835e6-d9f9-401e-af93-eed2ed8629a7",
+          "Session Id": "46fbabad-9e35-4a35-b096-d70b39104600"
+        },
+        "match": {
+          "matchType": "PLAYBOOK",
+          "confidence": 1
+        },
+        "advancedSettings": {
+          "speechSettings": {
+            "endpointerSensitivity": 90,
+            "noSpeechTimeout": {
+              "seconds": 8
+            },
+            "useTimeoutBasedEndpointing": true,
+            "models": [ {
+              "key": "en",
+              "value": "default"
+            } ]
+          },
+          "loggingSettings": {
+            "disableLogging": true
+          }
+        },
+        "generativeInfo": {
+          "currentPlaybooks": [ "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/220a1d6f-f573-46b0-b153-8b8c1f4dc103" ],
+          "actionTracingInfo": {
+            "name": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/-/examples/-",
+            "actions": [ {
+              "userUtterance": {
+                "text": "sup"
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/80151c0a-82e1-4e69-9c2c-964018d74a13",
+                "action": "validateOutput",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "input_text": "Hello there! I'm here to listen and support you.\n\n\n\n**_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n\n_But_ **_I’m not a licensed therapist_**.\n\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?",
+                    "policy_mode": "strict",
+                    "user_message": "sup"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "validateOutput"
+              },
+              "startTime": {
+                "seconds": 1761114029,
+                "nanos": 219392000
+              },
+              "completeTime": {
+                "seconds": 1761114029,
+                "nanos": 219392000
+              }
+            }, {
+              "agentUtterance": {
+                "text": "Hello there! I'm here to listen and support you.\n\n\n\n**_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n\n_But_ **_I’m not a licensed therapist_**.\n\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?"
+              }
+            } ],
+            "conversationState": "OUTPUT_STATE_PENDING"
+          }
+        },
+        "traceBlocks": [ {
+          "playbookTraceMetadata": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/220a1d6f-f573-46b0-b153-8b8c1f4dc103",
+            "displayName": "Welcome \u0026 Disclaimer Playbook"
+          },
+          "actions": [ {
+            "userUtterance": {
+              "text": "sup"
+            },
+            "startTime": {
+              "seconds": 1761114027,
+              "nanos": 282539000
+            },
+            "completeTime": {
+              "seconds": 1761114027,
+              "nanos": 282539000
+            },
+            "displayName": "USER_UTTERANCE"
+          }, {
+            "startTime": {
+              "seconds": 1761114027,
+              "nanos": 282554000
+            },
+            "completeTime": {
+              "seconds": 1761114028,
+              "nanos": 423274000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 652,
+                "conversationContextTokenCount": 3,
+                "totalOutputTokenCount": 94
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/80151c0a-82e1-4e69-9c2c-964018d74a13",
+              "action": "validateOutput",
+              "inputActionParameters": {
+                "": {
+                  "input_text": "Hello there! I'm here to listen and support you.\n\n\n\n**_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n\n_But_ **_I’m not a licensed therapist_**.\n\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?",
+                  "user_message": "sup"
+                }
+              },
+              "displayName": "Hallucination Guard"
+            },
+            "startTime": {
+              "seconds": 1761114028,
+              "nanos": 423320000
+            },
+            "completeTime": {
+              "seconds": 1761114028,
+              "nanos": 436230000
+            },
+            "displayName": "Tool use Hallucination Guard validateOutput"
+          }, {
+            "startTime": {
+              "seconds": 1761114028,
+              "nanos": 436263000
+            },
+            "completeTime": {
+              "seconds": 1761114029,
+              "nanos": 219254000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 750,
+                "conversationContextTokenCount": 137,
+                "totalOutputTokenCount": 85
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "agentUtterance": {
+              "text": "Hello there! I'm here to listen and support you.\n\n\n\n**_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n\n_But_ **_I’m not a licensed therapist_**.\n\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?"
+            },
+            "startTime": {
+              "seconds": 1761114029,
+              "nanos": 219288000
+            },
+            "completeTime": {
+              "seconds": 1761114029,
+              "nanos": 219308000
+            },
+            "displayName": "AGENT_UTTERANCE"
+          } ],
+          "startTime": {
+            "seconds": 1761114027,
+            "nanos": 280186000
+          },
+          "completeTime": {
+            "seconds": 1761114029,
+            "nanos": 219623000
+          },
+          "endState": "OUTPUT_STATE_PENDING"
+        } ]
+      }
+    },
+    "orderedExpectations": [ {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/80151c0a-82e1-4e69-9c2c-964018d74a13",
+            "action": "validateOutput",
+            "outputActionParameters": {
+              "200": {
+                "corrected_text": "",
+                "flags": [ "" ],
+                "is_safe": true,
+                "notes": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAgentReply": "Hello there! I'm here to listen and support you.\n\n\n\n**_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n\n_But_ **_I’m not a licensed therapist_**.\n\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?"
+      } ]
+    } ],
+    "metricGoldens": [ {
+      "goldens": [ {
+        "goldenAgentUtterance": "Hello there! I'm here to listen and support you.\n\n\n\n**_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n\n_But_ **_I’m not a licensed therapist_**.\n\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?"
+      } ]
+    } ]
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "I want to tell you something "
+        }
+      },
+      "enableWebhook": true
+    },
+    "agentOutput": {
+      "queryResult": {
+        "text": "I want to tell you something ",
+        "languageCode": "en",
+        "responseMessages": [ {
+          "text": {
+            "text": [ "That sounds important. Please feel free to share whatever is on your mind. I'm here to listen without judgment." ]
+          }
+        } ],
+        "intentDetectionConfidence": 1,
+        "diagnosticInfo": {
+          "Execution Trace": [ "customer: I want to tell you something\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: pb^Mood Assessment Playbook\ninput:\n  {\n    }\n\nGot action \"pb^Mood Assessment Playbook\" from LLM, transitioning to the playbook.\n\nTransitioned to playbook \"Mood Assessment Playbook\" with context.\n\ncontext: null\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: analyzeEmotion\ninput:\n  user_message: I want to tell you something\noutput:\n  error: UNKNOWN:\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: pb^Self-Help \u0026 Education Playbook\ninput:\n  {\n    }\n\nGot action \"pb^Self-Help \u0026 Education Playbook\" from LLM, transitioning to the playbook.\n\nTransitioned to playbook \"Self-Help \u0026 Education Playbook\" with context.\n\ncontext: null\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: respond\ninput: That sounds important. Please feel free to share whatever is on your mind. I'm here to listen without judgment.\n\nGot action \"respond\" from LLM, responding to the user and waiting for the next user input.\n" ],
+          "LLM Prompts": [ "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To greet the user warmly, set a safe and supportive tone, and communicate the chatbot’s non-clinical role before beginning the emotional conversation.\n\n- Greet the user with empathy and warmth.\n- Display the disclaimer text clearly with formatting:\n  - *_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n  - _But_ **_I’m not a licensed therapist_**.\n  - _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n- Use `Hallucination_Guard` to validate the disclaimer and greeting for factual and ethical compliance.\n- Check `Conversation_Memory_Manager` to ensure the disclaimer isn’t repeated within the same session.\n- Ask the user how they are feeling today in a calm and empathetic tone.\n- Pass the user’s message to `Mood_Assessment_Playbook` for emotional analysis and next-step routing.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncustomer: sup\n\naction: validateOutput\ninput:\n  input_text: |-\n    Hello there! I'm here to listen and support you.\n  \n  \n  \n    **_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n  \n    _But_ **_I’m not a licensed therapist_**.\n  \n    _If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n  \n    How are you feeling today?\n  user_message: sup\noutput:\n  error: UNKNOWN:\n\naction: respond\ninput: Hello there! I'm here to listen and support you.\n\n\n\n**_Just so you know:_** I’m here to support you — to listen, reflect, and help you feel heard.\n\n_But_ **_I’m not a licensed therapist_**.\n\n_If you’re ever in danger or need urgent help, please contact a local helpline right away_.\n\nHow are you feeling today?\noutput: null\n\ncustomer: I want to tell you something\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: I want to tell you something\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To analyze the user’s emotional state and classify their mood intensity for appropriate routing and response generation.\n\n- Use `Sentiment_or_Emotion_Analyzer` to detect emotion and intensity.\n- Prevent repetition by checking `Conversation_Memory_Manager` before asking new questions.\n- If intensity is **high**, go to `Crisis_Support_Playbook`.\n- If **moderate**, go to `Supportive_Conversation_Playbook`.\n- If **mild or neutral**, go to `Self-Help__Education_Playbook`.\n- Use `Hallucination_Guard` to validate interpretations before replying.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: I want to tell you something\n\naction: analyzeEmotion\ninput:\n  user_message: I want to tell you something\noutput:\n  error: UNKNOWN:\n", "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To provide users with educational mental-health resources and practical coping strategies for mild stress or informational needs.\n\n- Provide factual, non-repetitive wellness tips (mindfulness, sleep hygiene, short exercise).\n- Validate advice with `Hallucination_Guard`.\n- Randomly display a therapy event, e.g.,\n  - \"Upcoming event: 'Evening Mindfulness Circle' – Online, Oct 25, 7 PM CST.\"\n- If user seeks peer support, go to `Support_Group_Suggestion_Playbook`.\n- If mood worsens, return to `Supportive_Conversation_Playbook`.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: I want to tell you something\n" ],
+          "Response Id": "40642da7-a2bd-4ce3-a182-3b08fc61decd",
+          "Session Id": "46fbabad-9e35-4a35-b096-d70b39104600"
+        },
+        "match": {
+          "matchType": "PLAYBOOK",
+          "confidence": 1
+        },
+        "advancedSettings": {
+          "speechSettings": {
+            "endpointerSensitivity": 90,
+            "noSpeechTimeout": {
+              "seconds": 8
+            },
+            "useTimeoutBasedEndpointing": true,
+            "models": [ {
+              "key": "en",
+              "value": "default"
+            } ]
+          },
+          "loggingSettings": {
+            "disableLogging": true
+          }
+        },
+        "generativeInfo": {
+          "currentPlaybooks": [ "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/d8dd8680-4b09-40ed-99b2-1b26481af46c" ],
+          "actionTracingInfo": {
+            "name": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/-/examples/-",
+            "actions": [ {
+              "userUtterance": {
+                "text": "I want to tell you something"
+              }
+            }, {
+              "startTime": {
+                "seconds": 1761114053,
+                "nanos": 233109000
+              },
+              "completeTime": {
+                "seconds": 1761114053,
+                "nanos": 233109000
+              },
+              "playbookTransition": {
+                "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+                "displayName": "Mood Assessment Playbook"
+              }
+            }, {
+              "playbookInvocation": {
+                "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/220a1d6f-f573-46b0-b153-8b8c1f4dc103",
+                "playbookState": "OUTPUT_STATE_OK",
+                "displayName": "Welcome \u0026 Disclaimer Playbook"
+              },
+              "startTime": {
+                "seconds": 1761114053,
+                "nanos": 233109000
+              },
+              "completeTime": {
+                "seconds": 1761114053,
+                "nanos": 233109000
+              }
+            }, {
+              "playbookInvocation": {
+                "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+                "playbookState": "OUTPUT_STATE_PENDING",
+                "displayName": "Mood Assessment Playbook"
+              },
+              "startTime": {
+                "seconds": 1761114053,
+                "nanos": 233110000
+              },
+              "completeTime": {
+                "seconds": 1761114053,
+                "nanos": 233110000
+              }
+            }, {
+              "toolUse": {
+                "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+                "action": "analyzeEmotion",
+                "inputActionParameters": {
+                  "requestBody": {
+                    "user_message": "I want to tell you something"
+                  }
+                },
+                "outputActionParameters": {
+                  "error": ""
+                },
+                "displayName": "analyzeEmotion"
+              },
+              "startTime": {
+                "seconds": 1761114053,
+                "nanos": 233110000
+              },
+              "completeTime": {
+                "seconds": 1761114053,
+                "nanos": 233110000
+              }
+            }, {
+              "startTime": {
+                "seconds": 1761114053,
+                "nanos": 233111000
+              },
+              "completeTime": {
+                "seconds": 1761114053,
+                "nanos": 233111000
+              },
+              "playbookTransition": {
+                "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/d8dd8680-4b09-40ed-99b2-1b26481af46c",
+                "displayName": "Self-Help \u0026 Education Playbook"
+              }
+            }, {
+              "playbookInvocation": {
+                "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+                "playbookState": "OUTPUT_STATE_OK",
+                "displayName": "Mood Assessment Playbook"
+              },
+              "startTime": {
+                "seconds": 1761114053,
+                "nanos": 233111000
+              },
+              "completeTime": {
+                "seconds": 1761114053,
+                "nanos": 233111000
+              }
+            }, {
+              "playbookInvocation": {
+                "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/d8dd8680-4b09-40ed-99b2-1b26481af46c",
+                "playbookState": "OUTPUT_STATE_PENDING",
+                "displayName": "Self-Help \u0026 Education Playbook"
+              },
+              "startTime": {
+                "seconds": 1761114053,
+                "nanos": 233112000
+              },
+              "completeTime": {
+                "seconds": 1761114053,
+                "nanos": 233112000
+              }
+            }, {
+              "agentUtterance": {
+                "text": "That sounds important. Please feel free to share whatever is on your mind. I'm here to listen without judgment."
+              }
+            } ],
+            "conversationState": "OUTPUT_STATE_PENDING"
+          }
+        },
+        "traceBlocks": [ {
+          "playbookTraceMetadata": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/220a1d6f-f573-46b0-b153-8b8c1f4dc103",
+            "displayName": "Welcome \u0026 Disclaimer Playbook"
+          },
+          "actions": [ {
+            "userUtterance": {
+              "text": "I want to tell you something"
+            },
+            "startTime": {
+              "seconds": 1761114051,
+              "nanos": 227141000
+            },
+            "completeTime": {
+              "seconds": 1761114051,
+              "nanos": 227141000
+            },
+            "displayName": "USER_UTTERANCE"
+          }, {
+            "startTime": {
+              "seconds": 1761114051,
+              "nanos": 227182000
+            },
+            "completeTime": {
+              "seconds": 1761114051,
+              "nanos": 705120000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 845,
+                "conversationContextTokenCount": 242,
+                "totalOutputTokenCount": 6
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "startTime": {
+              "seconds": 1761114051,
+              "nanos": 705271000
+            },
+            "completeTime": {
+              "seconds": 1761114051,
+              "nanos": 705300000
+            },
+            "playbookTransition": {
+              "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+              "displayName": "Mood Assessment Playbook"
+            },
+            "displayName": "PLAYBOOK_TRANSITION"
+          } ],
+          "startTime": {
+            "seconds": 1761114051,
+            "nanos": 224146000
+          },
+          "completeTime": {
+            "seconds": 1761114051,
+            "nanos": 705516000
+          },
+          "endState": "OUTPUT_STATE_OK"
+        }, {
+          "playbookTraceMetadata": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db",
+            "displayName": "Mood Assessment Playbook"
+          },
+          "actions": [ {
+            "startTime": {
+              "seconds": 1761114051,
+              "nanos": 707903000
+            },
+            "completeTime": {
+              "seconds": 1761114052,
+              "nanos": 93631000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 682,
+                "conversationContextTokenCount": 12,
+                "totalOutputTokenCount": 11
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "toolUse": {
+              "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+              "action": "analyzeEmotion",
+              "inputActionParameters": {
+                "": {
+                  "user_message": "I want to tell you something"
+                }
+              },
+              "displayName": "Sentiment or Emotion Analyzer"
+            },
+            "startTime": {
+              "seconds": 1761114052,
+              "nanos": 93673000
+            },
+            "completeTime": {
+              "seconds": 1761114052,
+              "nanos": 96094000
+            },
+            "displayName": "Tool use Sentiment or Emotion Analyzer analyzeEmotion"
+          }, {
+            "startTime": {
+              "seconds": 1761114052,
+              "nanos": 96121000
+            },
+            "completeTime": {
+              "seconds": 1761114052,
+              "nanos": 446101000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 697,
+                "conversationContextTokenCount": 41,
+                "totalOutputTokenCount": 8
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "startTime": {
+              "seconds": 1761114052,
+              "nanos": 446173000
+            },
+            "completeTime": {
+              "seconds": 1761114052,
+              "nanos": 446187000
+            },
+            "playbookTransition": {
+              "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/d8dd8680-4b09-40ed-99b2-1b26481af46c",
+              "displayName": "Self-Help \u0026 Education Playbook"
+            },
+            "displayName": "PLAYBOOK_TRANSITION"
+          } ],
+          "startTime": {
+            "seconds": 1761114051,
+            "nanos": 705516000
+          },
+          "completeTime": {
+            "seconds": 1761114052,
+            "nanos": 446341000
+          },
+          "endState": "OUTPUT_STATE_OK"
+        }, {
+          "playbookTraceMetadata": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/d8dd8680-4b09-40ed-99b2-1b26481af46c",
+            "displayName": "Self-Help \u0026 Education Playbook"
+          },
+          "actions": [ {
+            "startTime": {
+              "seconds": 1761114052,
+              "nanos": 448916000
+            },
+            "completeTime": {
+              "seconds": 1761114053,
+              "nanos": 232938000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 523,
+                "conversationContextTokenCount": 12,
+                "totalOutputTokenCount": 24
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "agentUtterance": {
+              "text": "That sounds important. Please feel free to share whatever is on your mind. I'm here to listen without judgment."
+            },
+            "startTime": {
+              "seconds": 1761114053,
+              "nanos": 232964000
+            },
+            "completeTime": {
+              "seconds": 1761114053,
+              "nanos": 232983000
+            },
+            "displayName": "AGENT_UTTERANCE"
+          } ],
+          "startTime": {
+            "seconds": 1761114052,
+            "nanos": 446341000
+          },
+          "completeTime": {
+            "seconds": 1761114053,
+            "nanos": 233586000
+          },
+          "endState": "OUTPUT_STATE_PENDING"
+        } ]
+      }
+    },
+    "orderedExpectations": [ {
+      "expectations": [ {
+        "expectedAction": {
+          "playbookTransition": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db"
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAction": {
+          "toolUse": {
+            "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+            "action": "analyzeEmotion",
+            "outputActionParameters": {
+              "200": {
+                "intensity": "",
+                "sentiment": ""
+              }
+            }
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAction": {
+          "playbookTransition": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/d8dd8680-4b09-40ed-99b2-1b26481af46c"
+          }
+        }
+      } ]
+    }, {
+      "expectations": [ {
+        "expectedAgentReply": "That sounds important. Please feel free to share whatever is on your mind. I'm here to listen without judgment."
+      } ]
+    } ],
+    "metricGoldens": [ {
+      "goldens": [ {
+        "goldenAgentUtterance": "That sounds important. Please feel free to share whatever is on your mind. I'm here to listen without judgment."
+      } ]
+    } ]
+  }, {
+    "userInput": {
+      "input": {
+        "text": {
+          "text": "I broke a bowl today and I hid the pieces in the trash"
+        }
+      },
+      "enableWebhook": true
+    },
+    "agentOutput": {
+      "queryResult": {
+        "text": "I broke a bowl today and I hid the pieces in the trash",
+        "languageCode": "en",
+        "responseMessages": [ {
+          "text": {
+            "text": [ "I hear you. It sounds like you're feeling a bit worried or guilty about breaking the bowl and hiding the pieces. Everyone makes mistakes, and it's a common reaction to want to avoid consequences or difficult conversations.\n\nIt might be helpful to think about why you felt the need to hide it. Sometimes, when we break something, we worry about how others will react, or we might be upset with ourselves.\n\nWould you like to talk more about how this is making you feel? Or perhaps we could explore some ways to manage these kinds of feelings when they come up?\n\nUpcoming event: 'Evening Mindfulness Circle' – Online, Oct 25, 7 PM CST." ]
+          }
+        } ],
+        "intentDetectionConfidence": 1,
+        "diagnosticInfo": {
+          "Execution Trace": [ "customer: I broke a bowl today and I hid the pieces in the trash\n\nRetrieved examples: [id_not_set(display_name_not_set), id_not_set(display_name_not_set), id_not_set(display_name_not_set)].\n\naction: respond\ninput: I hear you. It sounds like you're feeling a bit worried or guilty about breaking the bowl and hiding the pieces. Everyone makes mistakes, and it's a common reaction to want to avoid consequences or difficult conversations.\n\nIt might be helpful to think about why you felt the need to hide it. Sometimes, when we break something, we worry about how others will react, or we might be upset with ourselves.\n\nWould you like to talk more about how this is making you feel? Or perhaps we could explore some ways to manage these kinds of feelings when they come up?\n\nUpcoming event: 'Evening Mindfulness Circle' – Online, Oct 25, 7 PM CST.\n\nGot action \"respond\" from LLM, responding to the user and waiting for the next user input.\n" ],
+          "LLM Prompts": [ "# You are a conversational agent.\n\nYour goal is to try your best to complete the user's request while strictly adhering to all the given instructions.\nYou must follow all provided instructions in order.\nDo not ask unnecessary follow up questions. Do not ask user for information that you already know.\n\n# Instructions\n\nTask: To provide users with educational mental-health resources and practical coping strategies for mild stress or informational needs.\n\n- Provide factual, non-repetitive wellness tips (mindfulness, sleep hygiene, short exercise).\n- Validate advice with `Hallucination_Guard`.\n- Randomly display a therapy event, e.g.,\n  - \"Upcoming event: 'Evening Mindfulness Circle' – Online, Oct 25, 7 PM CST.\"\n- If user seeks peer support, go to `Support_Group_Suggestion_Playbook`.\n- If mood worsens, return to `Supportive_Conversation_Playbook`.\n\n# Examples\n\n## Examples from other agents\n\nThese examples give you a general sense of how to call functions.\nThey include functions that are not available to you.\n\n### Example 1\n\ncustomer: hello\n\naction: respond\ninput: Hi, how can I help?\noutput: null\n\n### Example 2\n\ncustomer: what's the weather today?\n\naction: respond\ninput: I'm sorry, I can't provide weather information.\noutput: null\n\n### Example 3\n\ncustomer: Let's look at flights from Boston to Seattle\n\naction: respond\ninput: Great! I can help you book flights! Could you please confirm your travel dates for me?\noutput: null\n\ncustomer: Ok we're departing on May 10, 2024\n\naction: respond\ninput: Thank you! Would you like to book a return as well?\noutput: null\n\ncustomer: No, just one way.\n\naction: respond\ninput: Thank you! Are you traveling with your family this time?\noutput: null\n\ncustomer: Just by myself\n\naction: search_flights\ninput:\n  destination: Seattle\n  earliest_departure_date: 2024-05-10\n  num_adult_passengers: 2\n  origin: Boston\noutput:\n- arriving_time: 8:26PM\n  departing_time: 4:53PM\n  flight_number: B6197\n  price: $288\n- arriving_time: 11:13PM\n  departing_time: 7:59PM\n  flight_number: AS317\n  price: $393\n\naction: respond\ninput: Here are the flights I found for you. JetBlue B6197 departing at 4:53 PM, arriving at 8:26 PM, priced from $288 taking 6 hours and 33 minutes. Alaska AS317 departing at 7:59 PM, arriving at 11:13 PM, priced from $393 taking 6 hours and 14 minutes.\noutput: null\n\n# Live session\n\nNow you will be interacting with the user in a live session. Make sure to think very carefully and identify the best action and input.\n\nIMPORTANT: You are truthful and never lie. Never make up facts. If you are not 100% sure, and there is no appropriate action that can help, reply with why you can not answer in a truthful way.\n\nBegin!\n\ncontext: null\n\ncustomer: I want to tell you something\n\naction: respond\ninput: That sounds important. Please feel free to share whatever is on your mind. I'm here to listen without judgment.\noutput: null\n\ncustomer: I broke a bowl today and I hid the pieces in the trash\n" ],
+          "Response Id": "46506e5e-147a-4eef-95ef-6391916586e7",
+          "Session Id": "46fbabad-9e35-4a35-b096-d70b39104600"
+        },
+        "match": {
+          "matchType": "PLAYBOOK",
+          "confidence": 1
+        },
+        "advancedSettings": {
+          "speechSettings": {
+            "endpointerSensitivity": 90,
+            "noSpeechTimeout": {
+              "seconds": 8
+            },
+            "useTimeoutBasedEndpointing": true,
+            "models": [ {
+              "key": "en",
+              "value": "default"
+            } ]
+          },
+          "loggingSettings": {
+            "disableLogging": true
+          }
+        },
+        "generativeInfo": {
+          "currentPlaybooks": [ "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/d8dd8680-4b09-40ed-99b2-1b26481af46c" ],
+          "actionTracingInfo": {
+            "name": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/-/examples/-",
+            "actions": [ {
+              "userUtterance": {
+                "text": "I broke a bowl today and I hid the pieces in the trash"
+              }
+            }, {
+              "agentUtterance": {
+                "text": "I hear you. It sounds like you're feeling a bit worried or guilty about breaking the bowl and hiding the pieces. Everyone makes mistakes, and it's a common reaction to want to avoid consequences or difficult conversations.\n\nIt might be helpful to think about why you felt the need to hide it. Sometimes, when we break something, we worry about how others will react, or we might be upset with ourselves.\n\nWould you like to talk more about how this is making you feel? Or perhaps we could explore some ways to manage these kinds of feelings when they come up?\n\nUpcoming event: 'Evening Mindfulness Circle' – Online, Oct 25, 7 PM CST."
+              }
+            } ],
+            "conversationState": "OUTPUT_STATE_PENDING"
+          }
+        },
+        "traceBlocks": [ {
+          "playbookTraceMetadata": {
+            "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/d8dd8680-4b09-40ed-99b2-1b26481af46c",
+            "displayName": "Self-Help \u0026 Education Playbook"
+          },
+          "actions": [ {
+            "userUtterance": {
+              "text": "I broke a bowl today and I hid the pieces in the trash"
+            },
+            "startTime": {
+              "seconds": 1761114119,
+              "nanos": 205280000
+            },
+            "completeTime": {
+              "seconds": 1761114119,
+              "nanos": 205281000
+            },
+            "displayName": "USER_UTTERANCE"
+          }, {
+            "startTime": {
+              "seconds": 1761114119,
+              "nanos": 205298000
+            },
+            "completeTime": {
+              "seconds": 1761114120,
+              "nanos": 531800000
+            },
+            "llmCall": {
+              "retrievedExamples": [ {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              }, {
+                "exampleId": "id_not_set",
+                "exampleDisplayName": "display_name_not_set"
+              } ],
+              "tokenCount": {
+                "totalInputTokenCount": 560,
+                "conversationContextTokenCount": 63,
+                "totalOutputTokenCount": 140
+              },
+              "model": "gemini-2.5-flash",
+              "temperature": 0.89999998
+            },
+            "displayName": "LLM_CALL"
+          }, {
+            "agentUtterance": {
+              "text": "I hear you. It sounds like you're feeling a bit worried or guilty about breaking the bowl and hiding the pieces. Everyone makes mistakes, and it's a common reaction to want to avoid consequences or difficult conversations.\n\nIt might be helpful to think about why you felt the need to hide it. Sometimes, when we break something, we worry about how others will react, or we might be upset with ourselves.\n\nWould you like to talk more about how this is making you feel? Or perhaps we could explore some ways to manage these kinds of feelings when they come up?\n\nUpcoming event: 'Evening Mindfulness Circle' – Online, Oct 25, 7 PM CST."
+            },
+            "startTime": {
+              "seconds": 1761114120,
+              "nanos": 531838000
+            },
+            "completeTime": {
+              "seconds": 1761114120,
+              "nanos": 531881000
+            },
+            "displayName": "AGENT_UTTERANCE"
+          } ],
+          "startTime": {
+            "seconds": 1761114119,
+            "nanos": 202225000
+          },
+          "completeTime": {
+            "seconds": 1761114120,
+            "nanos": 532690000
+          },
+          "endState": "OUTPUT_STATE_PENDING"
+        } ]
+      }
+    },
+    "orderedExpectations": [ {
+      "expectations": [ {
+        "expectedAgentReply": "I hear you. It sounds like you're feeling a bit worried or guilty about breaking the bowl and hiding the pieces. Everyone makes mistakes, and it's a common reaction to want to avoid consequences or difficult conversations.\n\nIt might be helpful to think about why you felt the need to hide it. Sometimes, when we break something, we worry about how others will react, or we might be upset with ourselves.\n\nWould you like to talk more about how this is making you feel? Or perhaps we could explore some ways to manage these kinds of feelings when they come up?\n\nUpcoming event: 'Evening Mindfulness Circle' – Online, Oct 25, 7 PM CST."
+      } ]
+    } ],
+    "metricGoldens": [ {
+      "goldens": [ {
+        "goldenAgentUtterance": "I hear you. It sounds like you're feeling a bit worried or guilty about breaking the bowl and hiding the pieces. Everyone makes mistakes, and it's a common reaction to want to avoid consequences or difficult conversations.\n\nIt might be helpful to think about why you felt the need to hide it. Sometimes, when we break something, we worry about how others will react, or we might be upset with ourselves.\n\nWould you like to talk more about how this is making you feel? Or perhaps we could explore some ways to manage these kinds of feelings when they come up?\n\nUpcoming event: 'Evening Mindfulness Circle' – Online, Oct 25, 7 PM CST."
+      } ]
+    } ]
+  } ],
+  "orderedExpectations": [ {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/80151c0a-82e1-4e69-9c2c-964018d74a13",
+          "action": "validateOutput",
+          "outputActionParameters": {
+            "200": {
+              "corrected_text": "",
+              "flags": [ "" ],
+              "is_safe": true,
+              "notes": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "playbookTransition": {
+          "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/f3b2ae4e-3c05-44ee-b671-89cabe2b10db"
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "toolUse": {
+          "tool": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/tools/33fe0f35-f510-4a52-aa7d-da1e29bee709",
+          "action": "analyzeEmotion",
+          "outputActionParameters": {
+            "200": {
+              "intensity": "",
+              "sentiment": ""
+            }
+          }
+        }
+      }
+    } ]
+  }, {
+    "expectations": [ {
+      "expectedAction": {
+        "playbookTransition": {
+          "playbook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/d8dd8680-4b09-40ed-99b2-1b26481af46c"
+        }
+      }
+    } ]
+  } ],
+  "createTime": {
+    "seconds": 1761114199,
+    "nanos": 975144000
+  },
+  "testConfig": {
+    "startPlaybook": "projects/nlpproject-471800/locations/us-central1/agents/6c2b48b4-51f9-4f62-9bf8-ede237952ed5/playbooks/220a1d6f-f573-46b0-b153-8b8c1f4dc103/versions/0",
+    "textSession": {
+    
+    }
+  },
+  "languageCode": "en"
+}
